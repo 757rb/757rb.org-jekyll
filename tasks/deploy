@@ -1,0 +1,24 @@
+# Build and deploy to static site github repo.
+
+./tasks/jekyll 
+
+cd ~/Repositories/757.rb/757rb.github.org
+git checkout master
+git branch -D master_me
+git pull
+git checkout -b master_me
+
+cd ~/Repositories/757rb.org
+rsync -az --delete --exclude '.git' _site/ ~/Repositories/757.rb/757rb.github.com 
+
+cd ~/Repositories/757.rb/757rb.github.com
+git add . 
+git commit -a -m "Automatic deploy commit."
+git checkout master
+git merge master_me
+git push origin master
+if [[ -f .git/hooks/post-push ]]
+then
+  .git/hooks/post-push
+fi
+git checkout master_me

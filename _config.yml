@@ -1,0 +1,16 @@
+timezone: America/New_York
+markdown: redcarpet
+redcarpet:
+  extensions: ["no_intra_emphasis", "fenced_code_blocks", "autolink", "strikethrough", "lax_spacing", "superscript", "with_toc_data"]
+permalink: /:year/:month/:day/:title
+exclude:
+- Gemfile
+- Gemfile.lock
+- README.md
+- tidy.conf
+- config.ru
+- tasks
+- bin
+- public
+- tmp
+host: 757rb.org

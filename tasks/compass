@@ -1,0 +1,4 @@
+# Handy to watch for file changes while designing.
+
+compass watch --sass-dir _sass --css-dir _site/resource
+
