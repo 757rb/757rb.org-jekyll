@@ -1,6 +1,5 @@
 # Create the site and tidy it.
 
-env RM_STAR_SILENT=true rm -rf _site && mkdir _site && \
-  compass compile --sass-dir _sass --css-dir resource && \
+env RM_STAR_SILENT=true rm -rf _site/* && mkdir -p _site && \
   jekyll build && \
   find _site -name "*.html" -exec tidy -config $(pwd)/tidy.conf {} \;

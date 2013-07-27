@@ -14,3 +14,7 @@ exclude:
 - public
 - tmp
 host: 757rb.org
+assets:
+  js_compressor:  uglifier
+  css_compressor: sass
+  cache: _cache/assets

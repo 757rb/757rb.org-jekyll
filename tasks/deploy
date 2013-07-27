@@ -1,24 +1,25 @@
-# Build and deploy to static site github repo.
+# Build and deploy to static github repo.
 
 ./tasks/jekyll 
+sleep 1
 
-cd ~/Repositories/757.rb/757rb.github.org
-git checkout master
-git branch -D master_me
+message=$(git log -1 --pretty=%B)
+
+cd ../757rb.github.org
+git checkout gh-pages
 git pull
-git checkout -b master_me
+git branch -D gh-pages-stage
+git checkout -b gh-pages-stage
 
-cd ~/Repositories/757rb.org
-rsync -az --delete --exclude '.git' _site/ ~/Repositories/757.rb/757rb.github.com 
+cd ../757rb.org
+rsync -az --delete --exclude '.git' _site/ ../757rb.github.org
 
-cd ~/Repositories/757.rb/757rb.github.com
+cd ../757rb.github.org
 git add . 
-git commit -a -m "Automatic deploy commit."
-git checkout master
-git merge master_me
-git push origin master
-if [[ -f .git/hooks/post-push ]]
-then
-  .git/hooks/post-push
-fi
-git checkout master_me
+echo "Using commit message:"
+echo "$message"
+git commit -m "$message"
+git checkout gh-pages
+git merge gh-pages-stage
+git push origin gh-pages
+git checkout gh-pages-stage

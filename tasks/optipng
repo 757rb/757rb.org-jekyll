@@ -1,4 +1,4 @@
 # Optimize PNG files.
 
-find assets resource -name "*.png" -exec optipng -o7 {} \;
+find _assets/images -name "*.png" -exec optipng -o7 {} \;
 

@@ -1,0 +1,7 @@
+
+export LANG="en_US.UTF-8"
+export PATH="$HOME/.rbenv/shims:$HOME/.rbenv/bin:$HOME/.rbenv/plugins/ruby-build/bin:$PATH"
+eval "$(rbenv init -)"
+
+./tasks/jekyll
+

@@ -1,0 +1,39 @@
+@charset "UTF-8";
+@import "compass";
+@import "compass/layout";
+@import "compass/css3/user-interface";
+@include global-reset();
+
+
+/* Variables */
+
+$color-foo:  white;
+
+
+/* Silent Classes */
+
+%bs-border-box { @include box-sizing(border-box); }
+%bc-border-box { @include background-clip(border-box); }
+%bo-border-box { @include background-origin(border-box); }
+
+%font-family-main   { font-family: "Century Gothic", "CenturyGothic", "AppleGothic", sans-serif; }
+%font-family-header { font-family: "Gill Sans", "Gill Sans MT", "Calibri", sans-serif; }
+%font-family-links  { font-family: "Lucida Grande", "Lucida Sans Unicode", "Lucida Sans", "Geneva", Verdana, sans-serif; }
+
+
+/* Main */
+
+@each $el in elements-of-type('block') {  #{$el} { @extend %bs-border-box; } }
+
+html { 
+  color: black;
+  background-color: blue;
+  @extend %font-family-main;
+}
+
+a, a:link, a:visited, a:active { color: $color-link; text-decoration: none; }
+a:hover { text-decoration: underline; }
+
+
+/* Layout */
+
