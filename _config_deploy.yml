@@ -15,7 +15,7 @@ exclude:
 - tmp
 host: 757rb.org
 assets:
-  js_compressor: 
-  css_compressor: 
+  js_compressor: uglifier
+  css_compressor: sass
   cache: _cache/assets
-  cachebust: none
+  cachebust: hard

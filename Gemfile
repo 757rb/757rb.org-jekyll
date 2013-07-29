@@ -1,5 +1,7 @@
 source 'https://rubygems.org'
 
+gem 'compass'
+gem 'companimation'
 gem 'jekyll'
 gem 'jekyll-assets'
 gem 'rack'
@@ -7,5 +9,4 @@ gem 'rack-rewrite'
 gem 'redcarpet'
 gem 'RedCloth'
 gem 'sass'
-gem 'compass'
 gem 'uglifier'

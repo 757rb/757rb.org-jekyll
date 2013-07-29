@@ -2,11 +2,17 @@
 <html lang="en">
   <head>
     <meta charset="utf-8" />
-    <title>757.rb Ruby Users Group</title>
+    <title>757.rb - Ruby Users Group</title>
+    {% stylesheet application %}
   </head>
   <body>
-    <section id="content">
-      {{ content }}
+    <section class="sky">
+
+      <section class="water">
+        <img class="mermaid" src="{{ 'mermaid_32ppp.png' | asset_path }}">
+        <section class="watery"></section>
+      </section>
     </section>
+    {% javascript application %}
   </body>
 </html>

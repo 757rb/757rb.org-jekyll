@@ -1,0 +1,98 @@
+@charset "UTF-8";
+@import "compass";
+@import "compass/layout";
+@import "compass/css3/user-interface";
+@import 'companimation';
+@import 'companimation/preset/bounce/bounceInUp';
+@include global-reset();
+
+/* Modular Scale */
+/* http://modularscale.com/scale/?px1=14&px2=44&ra1=1.618&ra2=0 */
+
+$ms-ratio:            1.618;
+$ms-base-font-size:   14;
+$ms-ideal-number:     14;
+$ms-important-number: 44;
+
+$ms-pixel-targets-4: ( 406, 302, 251, 186, 155 );
+$ms-pixel-targets-3: ( 115, 96,  71,  59,  44  );
+$ms-pixel-targets-2: ( 37,  27,  23,  17,  14  );
+$ms-pixel-targets-1: ( 10,  9,   6,   5,   4   );
+
+@function rem($pixel-target) {
+  $target: $pixel-target / 1px;
+  $rems: $target / $ms-base-font-size;
+  $rem: $rems * 1rem;
+  @return $rem;
+}
+
+/* Variables */
+
+$color-sky:             #38c0fc;
+$color-water:           #0078fc;
+$color-cloud:           #cbf5f9;
+$color-white:           white;
+$color-ruby:            #ed1c24;
+$color-ruby-drk:        #cd2127;
+$color-mmaid-skin:      #f5be99;
+$color-mmaid-eyes:      #47463a;
+$color-mmaid-hair:      #c7463a;
+$color-mmaid-hair-drk:  #b7312c;
+$color-mmaid-body:      #d8d6b4;
+$color-mmaid-body-drk:  #a3a28b;
+
+$color-link: $color-white;
+
+
+/* Silent Classes */
+
+%bs-border-box { @include box-sizing(border-box); }
+%bc-border-box { @include background-clip(border-box); }
+%bo-border-box { @include background-origin(border-box); }
+
+%stretched { @include stretch; }
+
+%font-family-main   { font-family: "Century Gothic", "CenturyGothic", "AppleGothic", sans-serif; }
+%font-family-header { font-family: "Gill Sans", "Gill Sans MT", "Calibri", sans-serif; }
+%font-family-links  { font-family: "Lucida Grande", "Lucida Sans Unicode", "Lucida Sans", "Geneva", Verdana, sans-serif; }
+
+
+/* Main */
+
+@each $el in elements-of-type('block') {  #{$el} { @extend %bs-border-box; } }
+
+html { 
+  color: white;
+  @extend %font-family-main;
+}
+
+a, a:link, a:visited, a:active { color: $color-link; text-decoration: none; }
+a:hover { text-decoration: underline; }
+
+
+/* Layout */
+
+.sky {
+  background-color: $color-sky;
+  @extend %stretched; }
+
+.water {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  height: 17%;
+  background-color: $color-water;
+  overflow: visible; }
+  .mermaid {
+    position: absolute;
+    height: 180%;
+    overflow: visible;
+    top: -115%;
+    left: 40%;
+    @extend %bounceInUp; }
+  .watery {
+    position: absolute;
+    background-color: rgba($color-water, 0.6);
+    @extend %stretched; }
+
+
