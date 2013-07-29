@@ -2,8 +2,6 @@
 @import "compass";
 @import "compass/layout";
 @import "compass/css3/user-interface";
-@import 'companimation';
-@import 'companimation/preset/bounce/bounceInUp';
 @include global-reset();
 
 /* Modular Scale */
@@ -57,6 +55,26 @@ $color-link: $color-white;
 %font-family-links  { font-family: "Lucida Grande", "Lucida Sans Unicode", "Lucida Sans", "Geneva", Verdana, sans-serif; }
 
 
+/* Custom Companimations */
+
+@import 'companimation';
+@import 'companimation/preset/bounce/bounceInUp';
+
+@include animation(
+  $name: 'bobbing', 
+  $duration: 1.5s, 
+  $timing: ease-in-out, 
+  $iterations: infinite 
+  //$direction: alternate
+);
+@include keyframes('bobbing') {
+  0%    { -webkit-transform: translateY(0); }
+  25%   { -webkit-transform: translateY(2%); }
+  50%   { -webkit-transform: translateY(-1%); }
+  100%  { -webkit-transform: translateY(0); }
+}
+
+
 /* Main */
 
 @each $el in elements-of-type('block') {  #{$el} { @extend %bs-border-box; } }
@@ -89,7 +107,8 @@ a:hover { text-decoration: underline; }
     overflow: visible;
     top: -115%;
     left: 40%;
-    @extend %bounceInUp; }
+    &.bounceInUp { @extend %bounceInUp; }
+    &.bobbing    { @extend %bobbing; } }
   .watery {
     position: absolute;
     background-color: rgba($color-water, 0.6);
