@@ -26,7 +26,7 @@ waveLeftAdjustment = ->
   waveToOpening = (wavesWidth / wavesPixels) * wavesToOpeningPixels
   mermaidToLeft = (windowWidth * (mermaidLeftPercentage / 100))
   waves.css 'left', "#{mermaidToLeft - waveToOpening + mermaidToLeftBody}px"
-Zepto ($) -> waveLeftAdjustment()
+Zepto ($) -> delay 50, -> waveLeftAdjustment()
 $(window).resize waveLeftAdjustment
   
 

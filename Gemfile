@@ -1,5 +1,6 @@
 source 'https://rubygems.org'
 
+gem 'coffee-script'
 gem 'compass'
 gem 'companimation'
 gem 'jekyll'
