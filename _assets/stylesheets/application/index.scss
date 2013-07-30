@@ -115,9 +115,15 @@ a:hover { text-decoration: underline; }
     height: 180%;
     overflow: visible;
     top: -115%;
-    left: 40%;
+    left: 44%;
     &.bounceInUp { @extend %bounceInUp; }
     &.bobbing    { @extend %bobbing; } }
+  .waves {
+    position: absolute;
+    height: 25%;
+    top: -25%;
+    left: 40%;
+  }
   .watery {
     position: absolute;
     background-color: rgba($color-water, 0.6);
