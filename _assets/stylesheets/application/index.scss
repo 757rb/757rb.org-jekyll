@@ -64,14 +64,23 @@ $color-link: $color-white;
   $name: 'bobbing', 
   $duration: 1.5s, 
   $timing: ease-in-out, 
-  $iterations: infinite 
-  //$direction: alternate
+  $iterations: infinite,
+  $direction: alternate
 );
-@include keyframes('bobbing') {
-  0%    { -webkit-transform: translateY(0); }
-  25%   { -webkit-transform: translateY(2%); }
-  50%   { -webkit-transform: translateY(-1%); }
-  100%  { -webkit-transform: translateY(0); }
+@include webkit-keyframes('bobbing') {
+  0%, 100% { -webkit-transform: translateY(0); }
+  25% { -webkit-transform: translateY(2%); }
+  50% { -webkit-transform: translateY(-1%); }
+}
+@include moz-keyframes('bobbing') {
+  0%, 100% { -moz-transform: translateY(0); }
+  25% { -moz-transform: translateY(2%); }
+  50% { -moz-transform: translateY(-1%); }
+}
+@include official-keyframes('bobbing') {
+  0%, 100% { transform: translateY(0); }
+  25% { transform: translateY(2%); }
+  50% { transform: translateY(-1%); }
 }
 
 
