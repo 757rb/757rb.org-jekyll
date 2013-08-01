@@ -41,8 +41,10 @@ $color-mmaid-body-drk:  #a3a28b;
 
 $color-link: $color-white;
 
-$clouds-height-percentage: 83%;
-$water-height-percentage:  17%;
+$horizon-height:      83%;
+$horizon-left-width:  42%;
+$horizon-right-width: 42%;
+$water-height:        17%;
 
 
 
@@ -108,16 +110,26 @@ a:hover { text-decoration: underline; }
   @extend %stretched; }
 
 .horizon {
+  @extend %stretched;
   position: absolute;
-  @extend %stretched; 
-  height: $clouds-height-percentage; }
-  .horizon-right {}
+  overflow: hidden;
+  height: $horizon-height; }
+  .horizon-left,
+  .horizon-right {
+    position: absolute;
+    bottom: 0; }
+  .horizon-left  {
+    left: 0;
+    width: $horizon-left-width; }
+  .horizon-right  {
+    right: 0;
+    width: $horizon-right-width; }
 
 .water {
   position: absolute;
   bottom: 0;
   width: 100%;
-  height: $water-height-percentage;
+  height: $water-height;
   background-color: $color-water;
   overflow: visible; }
   .mermaid {
