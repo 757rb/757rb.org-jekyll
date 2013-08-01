@@ -41,6 +41,10 @@ $color-mmaid-body-drk:  #a3a28b;
 
 $color-link: $color-white;
 
+$clouds-height-percentage: 83%;
+$water-height-percentage:  17%;
+
+
 
 /* Silent Classes */
 
@@ -103,11 +107,16 @@ a:hover { text-decoration: underline; }
   background-color: $color-sky;
   @extend %stretched; }
 
+.horizon {
+  position: absolute;
+  @extend %stretched; 
+  height: $clouds-height-percentage; }
+
 .water {
   position: absolute;
   bottom: 0;
   width: 100%;
-  height: 17%;
+  height: $water-height-percentage;
   background-color: $color-water;
   overflow: visible; }
   .mermaid {
