@@ -42,7 +42,7 @@ $color-mmaid-body-drk:  #a3a28b;
 $color-link: $color-white;
 
 $horizon-height:      83%;
-$horizon-left-width:  42%;
+$horizon-left-width:  48%;
 $horizon-right-width: 42%;
 $water-height:        17%;
 
@@ -59,6 +59,14 @@ $water-height:        17%;
 %font-family-main   { font-family: "Century Gothic", "CenturyGothic", "AppleGothic", sans-serif; }
 %font-family-header { font-family: "Gill Sans", "Gill Sans MT", "Calibri", sans-serif; }
 %font-family-links  { font-family: "Lucida Grande", "Lucida Sans Unicode", "Lucida Sans", "Geneva", Verdana, sans-serif; }
+
+%pixelated {
+  image-rendering: -webkit-optimize-contrast;
+  image-rendering: -moz-crisp-edges;
+  image-rendering: -o-crisp-edges;
+  image-rendering: crisp-edges;
+  -ms-interpolation-mode: nearest-neighbor; 
+}
 
 
 /* Custom Companimations */
@@ -111,19 +119,20 @@ a:hover { text-decoration: underline; }
 
 .horizon {
   @extend %stretched;
-  position: absolute;
-  overflow: hidden;
   height: $horizon-height; }
   .horizon-left,
   .horizon-right {
+    @extend %stretched;
+    overflow: hidden; }
+  .horizon-left  {
+    right: 100% - $horizon-left-width; }
+  .horizon-right  {
+    left: 100% - $horizon-right-width; }
+  .horizon-image { 
+    @extend %pixelated;
+    width: 100%;
     position: absolute;
     bottom: 0; }
-  .horizon-left  {
-    left: 0;
-    width: $horizon-left-width; }
-  .horizon-right  {
-    right: 0;
-    width: $horizon-right-width; }
 
 .water {
   position: absolute;
@@ -133,6 +142,7 @@ a:hover { text-decoration: underline; }
   background-color: $color-water;
   overflow: visible; }
   .mermaid {
+    @extend %pixelated;
     position: absolute;
     height: 180%;
     overflow: visible;
@@ -141,13 +151,13 @@ a:hover { text-decoration: underline; }
     &.bounceInUp { @extend %bounceInUp; }
     &.bobbing    { @extend %bobbing; } }
   .waves {
+    @extend %pixelated;
     position: absolute;
     height: 25%;
     top: -25%;
     left: 40%; }
   .watery {
-    position: absolute;
-    background-color: rgba($color-water, 0.6);
-    @extend %stretched; }
+    @extend %stretched;
+    background-color: rgba($color-water, 0.6); }
 
 
