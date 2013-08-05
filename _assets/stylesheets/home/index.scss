@@ -43,7 +43,7 @@ $color-link: $color-white;
 
 $horizon-height:      83%;
 $horizon-left-width:  48%;
-$horizon-right-width: 42%;
+$horizon-right-width: 40%;
 $water-height:        17%;
 
 
@@ -121,18 +121,22 @@ a:hover { text-decoration: underline; }
   @extend %stretched;
   height: $horizon-height; }
   .horizon-left,
-  .horizon-right {
-    @extend %stretched;
-    overflow: hidden; }
-  .horizon-left  {
-    right: 100% - $horizon-left-width; }
-  .horizon-right  {
-    left: 100% - $horizon-right-width; }
+  .horizon-right { @extend %stretched; overflow: hidden; }
   .horizon-image { 
     @extend %pixelated;
-    width: 100%;
     position: absolute;
-    bottom: 0; }
+    bottom: 0;
+    width: 100%; }
+  .horizon-left  { 
+    right: 100% - $horizon-left-width;
+    .horizon-image {
+      right: 0; } }
+  .horizon-right { 
+    left: 100% - $horizon-right-width;
+    .horizon-image {
+      left: 0; } }
+  
+
 
 .water {
   position: absolute;
