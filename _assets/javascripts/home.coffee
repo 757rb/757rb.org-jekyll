@@ -1,32 +1,104 @@
 #= require vendor/zepto-1.0.min
 
-# Utility
+# Utils
 
-delay = (time, fn, args...) -> setTimeout fn, time, args...
+@Utils =
 
-# Site
+  delay: (time, fn, args...) -> setTimeout fn, time, args...
 
-mermaid = $('.mermaid')
-mermaidPixels = 27
-mermaidToLeftBodyPixels = 17
-mermaidLeftPercentage = Number mermaid.css('left').replace('%','')
-mermaid.addClass 'bounceInUp'
-delay 1000, -> 
-  mermaid.removeClass 'bounceInUp'
-  mermaid.addClass    'bobbing'
+# Pixel Sizes
 
-waves = $('.waves')
-wavesPixels = 46.0
-wavesToOpeningPixels = 25.0
-waveLeftAdjustment = ->
-  windowWidth = $(window).width()
-  mermaidWidth = mermaid.width()
-  wavesWidth = waves.width()
-  mermaidToLeftBody = (mermaidWidth / mermaidPixels) * mermaidToLeftBodyPixels
-  waveToOpening = (wavesWidth / wavesPixels) * wavesToOpeningPixels
-  mermaidToLeft = (windowWidth * (mermaidLeftPercentage / 100))
-  waves.css 'left', "#{mermaidToLeft - waveToOpening + mermaidToLeftBody}px"
-Zepto ($) -> delay 50, -> waveLeftAdjustment()
-$(window).resize waveLeftAdjustment
-  
+@Pixels = 
+  horizonLeft:       101
+  horizonRight:      80
+  waves:             46
+  wavesToOpening:    25
+  mermaid:           27
+  mermaidToLeftBody: 17
+
+# Home Layout Manager
+
+class HomeLayout
+
+  constructor: ->
+    @horizonLeft  = $('.horizon-left')
+    @horizonRight = $('.horizon-right')
+    @waves   = $('.waves')
+    @mermaid = $('.mermaid')
+    @setupMermaidAnimation()
+    @setupEvents()
+
+  pixelsPerPixel: ->
+    @mermaid.width() / Pixels.mermaid
+
+  # Private
+
+  setupMermaidAnimation: ->
+    @mermaid.addClass 'bounceInUp'
+    Utils.delay 1000, => 
+      @mermaid.removeClass 'bounceInUp'
+      @mermaid.addClass    'bobbing'
+    true
+
+  setupEvents: ->
+    $(window).resize @adjustWaves
+    @adjustWaves()
+    $(window).resize @adjustClouds
+    @adjustClouds()
+    
+  adjustWaves: =>
+    windowWidth = $(window).width()
+    mermaidWidth = @mermaid.width()
+    mermaidLeftPercentage = Number @mermaid.css('left').replace('%','')
+    wavesWidth = @waves.width()
+    mermaidToLeftBody = (mermaidWidth / Pixels.mermaid) * Pixels.mermaidToLeftBody
+    waveToOpening = (wavesWidth / Pixels.waves) * Pixels.wavesToOpening
+    mermaidToLeft = (windowWidth * (mermaidLeftPercentage / 100))
+    @waves.css 'left', "#{mermaidToLeft - waveToOpening + mermaidToLeftBody}px"
+
+  # adjustClouds: =>
+  #   ppp = @pixelsPerPixel()
+  #   # Left
+  #   hlPPP = Pixels.horizonLeft * ppp
+  #   hlWidth = @horizonLeft.width()
+  #   hlImages = @horizonLeft.find('.horizon-image')
+  #   hlCSS = {'width': "#{hlPPP}px"}
+  #   if hlWidth > hlPPP
+  #     hlCSS['left'] = '0'
+  #     hlCSS['right'] = 'auto'
+  #   else
+  #     hlCSS['left'] = 'auto'
+  #     hlCSS['right'] = '0'
+  #   hlImages.css(hlCSS)
+  #   # Right
+  #   hrPPP = Pixels.horizonRight * ppp
+  #   hrWidth = @horizonRight.width()
+  #   hrImages = @horizonRight.find('.horizon-image')
+  #   hrCSS = {'width': "#{hlPPP}px"}
+  #   if hlWidth > hlPPP
+  #     hrCSS['left'] = 'auto'
+  #     hrCSS['right'] = '0'
+  #   else
+  #     hrCSS['left'] = '0'
+  #     hrCSS['right'] = 'auto'
+  #   hrImages.css(hrCSS)
+
+  adjustClouds: =>
+    ppp = @pixelsPerPixel()
+    @adjustHorizon 'Left', ppp
+    @adjustHorizon 'Right', ppp
+
+  adjustHorizon: (side, ppp) ->
+    h = @["horizon#{side}"]
+    hPPP = Pixels["horizon#{side}"] * ppp
+    hWidth = h.width()
+    images = h.find('.horizon-image')
+    hugLeftCSS  = {width: "#{hPPP}px", left: '0', right: 'auto'}
+    hugRightCSS = {width: "#{hPPP}px", left: 'auto', right: '0'}
+    if side is 'Left'
+      if hWidth > hPPP then images.css(hugLeftCSS) else images.css(hugRightCSS)
+    else
+      if hWidth > hPPP then images.css(hugRightCSS) else images.css(hugLeftCSS)
+
+Zepto ($) => Utils.delay 50, => @HomeLayout = new HomeLayout
 
