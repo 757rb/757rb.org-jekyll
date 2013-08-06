@@ -56,33 +56,6 @@ class HomeLayout
     mermaidToLeft = (windowWidth * (mermaidLeftPercentage / 100))
     @waves.css 'left', "#{mermaidToLeft - waveToOpening + mermaidToLeftBody}px"
 
-  # adjustClouds: =>
-  #   ppp = @pixelsPerPixel()
-  #   # Left
-  #   hlPPP = Pixels.horizonLeft * ppp
-  #   hlWidth = @horizonLeft.width()
-  #   hlImages = @horizonLeft.find('.horizon-image')
-  #   hlCSS = {'width': "#{hlPPP}px"}
-  #   if hlWidth > hlPPP
-  #     hlCSS['left'] = '0'
-  #     hlCSS['right'] = 'auto'
-  #   else
-  #     hlCSS['left'] = 'auto'
-  #     hlCSS['right'] = '0'
-  #   hlImages.css(hlCSS)
-  #   # Right
-  #   hrPPP = Pixels.horizonRight * ppp
-  #   hrWidth = @horizonRight.width()
-  #   hrImages = @horizonRight.find('.horizon-image')
-  #   hrCSS = {'width': "#{hlPPP}px"}
-  #   if hlWidth > hlPPP
-  #     hrCSS['left'] = 'auto'
-  #     hrCSS['right'] = '0'
-  #   else
-  #     hrCSS['left'] = '0'
-  #     hrCSS['right'] = 'auto'
-  #   hrImages.css(hrCSS)
-
   adjustClouds: =>
     ppp = @pixelsPerPixel()
     @adjustHorizon 'Left', ppp
