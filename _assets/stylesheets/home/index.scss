@@ -99,9 +99,10 @@ $water-height:        17%;
 
 @include animation(
   $name: 'cloudMove', 
-  $duration: 10s, 
+  $duration: 50s, 
   $timing: linear, 
-  $iterations: infinite
+  $iterations: infinite,
+  $direction: alternate
 );
 @include keyframes('cloudMove') {
   from { background-position: 0 0; }
@@ -130,10 +131,8 @@ a:hover { text-decoration: underline; }
   .clouds {
     @extend %stretched;
     @extend %cloudMove;
-    //background-size: 100% auto;
-    background-image: image-url('clouds_big_32ppp.png');
+    background-image: asset_url('clouds_big_32ppp.png');
     background-repeat: repeat-x;
-    
   }
 
 .horizon {
