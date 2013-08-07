@@ -1,0 +1,107 @@
+
+@import 'companimation';
+@import 'companimation/preset/bounce/bounceInUp';
+
+
+// FadeInLeft Custom
+
+@include animation(
+  $name: fadeInLeftCustom,
+  $duration: 2s,
+  $timing: ease
+);
+
+@include webkit-keyframes(fadeInLeftCustom) {
+  0%   { opacity: 0; -webkit-transform: translateX(-100px); }
+  100% { opacity: 1; -webkit-transform: translateX(0); }
+}
+
+@include moz-keyframes(fadeInLeftCustom) {
+  0%   { opacity: 0; -moz-transform: translateX(-100px); }
+  100% { opacity: 1; -moz-transform: translateX(0); }
+}
+
+@include o-keyframes(fadeInLeftCustom) {
+  0%   { opacity: 0; -o-transform: translateX(-100px); }
+  100% { opacity: 1; -o-transform: translateX(0); }
+}
+
+@include official-keyframes(fadeInLeftCustom) {
+  0%   { opacity: 0; transform: translateX(-100px); }
+  100% { opacity: 1; transform: translateX(0); }
+}
+
+
+// FadeInRight Custom
+
+@include animation(
+  $name: fadeInRightCustom,
+  $duration: 2s,
+  $timing: ease
+);
+
+@include webkit-keyframes(fadeInRightCustom) {
+  0%   { opacity: 0; -webkit-transform: translateX(100px); }
+  100% { opacity: 1; -webkit-transform: translateX(0); }
+}
+
+@include moz-keyframes(fadeInRightCustom) {
+  0%   { opacity: 0; -moz-transform: translateX(100px); }
+  100% { opacity: 1; -moz-transform: translateX(0); }
+}
+
+@include o-keyframes(fadeInRightCustom) {
+  0%   { opacity: 0; -o-transform: translateX(100px); }
+  100% { opacity: 1; -o-transform: translateX(0); }
+}
+
+@include official-keyframes(fadeInRightCustom) {
+  0%   { opacity: 0; transform: translateX(100px); }
+  100% { opacity: 1; transform: translateX(0); }
+}
+
+
+// Bobbing
+
+@include animation(
+  $name: 'bobbing', 
+  $duration: 1.5s, 
+  $timing: ease-in-out, 
+  $iterations: infinite,
+  $direction: alternate
+);
+
+@include webkit-keyframes('bobbing') {
+  0%, 100% { -webkit-transform: translateY(0); }
+  25% { -webkit-transform: translateY(2%); }
+  50% { -webkit-transform: translateY(-1%); }
+}
+
+@include moz-keyframes('bobbing') {
+  0%, 100% { -moz-transform: translateY(0); }
+  25% { -moz-transform: translateY(2%); }
+  50% { -moz-transform: translateY(-1%); }
+}
+
+@include official-keyframes('bobbing') {
+  0%, 100% { transform: translateY(0); }
+  25% { transform: translateY(2%); }
+  50% { transform: translateY(-1%); }
+}
+
+
+// Cloud Move
+
+@include animation(
+  $name: 'cloudMove', 
+  $duration: 50s, 
+  $timing: linear, 
+  $iterations: infinite,
+  $direction: alternate
+);
+
+@include keyframes('cloudMove') {
+  from { background-position: 0 0; }
+  to   { background-position: 100% 0; }
+}
+

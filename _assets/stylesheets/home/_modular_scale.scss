@@ -1,0 +1,21 @@
+
+/* Modular Scale */
+/* http://modularscale.com/scale/?px1=14&px2=44&ra1=1.618&ra2=0 */
+
+$ms-ratio:            1.618;
+$ms-base-font-size:   14;
+$ms-ideal-number:     14;
+$ms-important-number: 44;
+
+$ms-pixel-targets-4: ( 406, 302, 251, 186, 155 );
+$ms-pixel-targets-3: ( 115, 96,  71,  59,  44  );
+$ms-pixel-targets-2: ( 37,  27,  23,  17,  14  );
+$ms-pixel-targets-1: ( 10,  9,   6,   5,   4   );
+
+@function rem($pixel-target) {
+  $target: $pixel-target / 1px;
+  $rems: $target / $ms-base-font-size;
+  $rem: $rems * 1rem;
+  @return $rem;
+}
+

@@ -1,0 +1,12 @@
+
+@each $el in elements-of-type('block') {  #{$el} { @extend %bs-border-box; } }
+
+html { 
+  color: white;
+  @extend %font-family-main; }
+
+body { background-color: $color-sky; }
+
+a, a:link, a:visited, a:active { color: $color-link; text-decoration: none; }
+a:hover { text-decoration: underline; }
+

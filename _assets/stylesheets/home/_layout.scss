@@ -1,0 +1,58 @@
+
+.sky {
+  @extend %stretched; }
+  .clouds {
+    @extend %stretched;
+    @extend %cloudMove;
+    background-image: asset_url('clouds_big_32ppp.png');
+    background-repeat: repeat-x;
+  }
+
+.horizon {
+  @extend %stretched;
+  height: $horizon-height; }
+  .horizon-left,
+  .horizon-right { 
+    @extend %stretched; 
+    overflow: hidden;
+    opacity: 0; }
+  .horizon-image { 
+    @extend %pixelated;
+    position: absolute;
+    bottom: 0;
+    width: 100%; }
+  .horizon-left  { 
+    right: 100% - $horizon-left-width;
+    &.fadeIn { @extend %fadeInLeftCustom; }
+    .horizon-image { right: 0; } }
+  .horizon-right { 
+    left: 100% - $horizon-right-width;
+    &.fadeIn { @extend %fadeInRightCustom; }
+    .horizon-image { left: 0; } }
+
+.water {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  height: $water-height;
+  background-color: $color-water;
+  overflow: visible; }
+  .mermaid {
+    @extend %pixelated;
+    position: absolute;
+    height: 180%;
+    overflow: visible;
+    top: -115%;
+    left: 44%;
+    &.bounceInUp { @extend %bounceInUp; }
+    &.bobbing    { @extend %bobbing; } }
+  .waves {
+    @extend %pixelated;
+    position: absolute;
+    height: 25%;
+    top: -25%;
+    left: 40%; }
+  .watery {
+    @extend %stretched;
+    background-color: rgba($color-water, 0.6); }
+

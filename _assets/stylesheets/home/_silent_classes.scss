@@ -1,0 +1,19 @@
+
+%bs-border-box { @include box-sizing(border-box); }
+%bc-border-box { @include background-clip(border-box); }
+%bo-border-box { @include background-origin(border-box); }
+
+%stretched { @include stretch; }
+
+%font-family-main   { font-family: "Century Gothic", "CenturyGothic", "AppleGothic", sans-serif; }
+%font-family-header { font-family: "Gill Sans", "Gill Sans MT", "Calibri", sans-serif; }
+%font-family-links  { font-family: "Lucida Grande", "Lucida Sans Unicode", "Lucida Sans", "Geneva", Verdana, sans-serif; }
+
+%pixelated {
+  image-rendering: -webkit-optimize-contrast;
+  image-rendering: -moz-crisp-edges;
+  image-rendering: -o-crisp-edges;
+  image-rendering: crisp-edges;
+  -ms-interpolation-mode: nearest-neighbor; 
+}
+

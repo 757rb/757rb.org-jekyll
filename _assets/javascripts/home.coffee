@@ -76,6 +76,7 @@ class HomeLayout
       if hWidth > hPPP then images.css(hugLeftCSS) else images.css(hugRightCSS)
     else
       if hWidth > hPPP then images.css(hugRightCSS) else images.css(hugLeftCSS)
+    h.addClass 'fadeIn' unless h.hasClass 'fadeIn'
 
   adjustClouds: =>
     ppp = @pixelsPerPixel()

@@ -17,5 +17,5 @@ host: 757rb.org
 assets:
   js_compressor: 
   css_compressor: 
-  cache: _cache/assets
+  cache: 
   cachebust: none
