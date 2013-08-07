@@ -39,13 +39,14 @@
   overflow: visible; }
   .mermaid {
     @extend %pixelated;
+    opacity: 0;
     position: absolute;
     height: 180%;
     overflow: visible;
     top: -115%;
     left: 44%;
-    &.bounceInUp { @extend %bounceInUp; }
-    &.bobbing    { @extend %bobbing; } }
+    &.bounceInUp { @extend %bounceInUp; opacity: 1; }
+    &.bobbing    { @extend %bobbing; opacity: 1; } }
   .waves {
     @extend %pixelated;
     position: absolute;
