@@ -97,6 +97,17 @@ $water-height:        17%;
   50% { transform: translateY(-1%); }
 }
 
+@include animation(
+  $name: 'cloudMove', 
+  $duration: 10s, 
+  $timing: linear, 
+  $iterations: infinite
+);
+@include keyframes('cloudMove') {
+  from { background-position: 0 0; }
+  to   { background-position: 100% 0; }
+}
+
 
 /* Main */
 
@@ -104,8 +115,9 @@ $water-height:        17%;
 
 html { 
   color: white;
-  @extend %font-family-main;
-}
+  @extend %font-family-main; }
+
+body { background-color: $color-sky; }
 
 a, a:link, a:visited, a:active { color: $color-link; text-decoration: none; }
 a:hover { text-decoration: underline; }
@@ -114,8 +126,15 @@ a:hover { text-decoration: underline; }
 /* Layout */
 
 .sky {
-  background-color: $color-sky;
   @extend %stretched; }
+  .clouds {
+    @extend %stretched;
+    @extend %cloudMove;
+    //background-size: 100% auto;
+    background-image: image-url('clouds_big_32ppp.png');
+    background-repeat: repeat-x;
+    
+  }
 
 .horizon {
   @extend %stretched;

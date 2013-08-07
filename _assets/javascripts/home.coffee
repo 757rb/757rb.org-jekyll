@@ -9,6 +9,7 @@
 # Pixel Sizes
 
 @Pixels = 
+  clouds:            301
   horizonLeft:       101
   horizonRight:      80
   waves:             46
@@ -21,6 +22,7 @@
 class HomeLayout
 
   constructor: ->
+    @clouds = $('.clouds')
     @horizonLeft  = $('.horizon-left')
     @horizonRight = $('.horizon-right')
     @waves   = $('.waves')
@@ -43,9 +45,11 @@ class HomeLayout
   setupEvents: ->
     $(window).resize @adjustWaves
     @adjustWaves()
+    $(window).resize @adjustHorizons
+    @adjustHorizons()
     $(window).resize @adjustClouds
     @adjustClouds()
-    
+
   adjustWaves: =>
     windowWidth = $(window).width()
     mermaidWidth = @mermaid.width()
@@ -56,7 +60,7 @@ class HomeLayout
     mermaidToLeft = (windowWidth * (mermaidLeftPercentage / 100))
     @waves.css 'left', "#{mermaidToLeft - waveToOpening + mermaidToLeftBody}px"
 
-  adjustClouds: =>
+  adjustHorizons: =>
     ppp = @pixelsPerPixel()
     @adjustHorizon 'Left', ppp
     @adjustHorizon 'Right', ppp
@@ -72,6 +76,11 @@ class HomeLayout
       if hWidth > hPPP then images.css(hugLeftCSS) else images.css(hugRightCSS)
     else
       if hWidth > hPPP then images.css(hugRightCSS) else images.css(hugLeftCSS)
+
+  adjustClouds: =>
+    ppp = @pixelsPerPixel()
+    cPPP = Pixels.clouds * ppp
+    @clouds.css 'background-size', "#{cPPP}px auto"
 
 Zepto ($) => Utils.delay 50, => @HomeLayout = new HomeLayout
 
