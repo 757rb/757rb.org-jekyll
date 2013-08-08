@@ -10,6 +10,7 @@
 
 @Pixels = 
   clouds:            301
+  birds:             15
   horizonLeft:       101
   horizonRight:      80
   waves:             46
@@ -23,6 +24,7 @@ class HomeLayout
 
   constructor: ->
     @clouds = $('.clouds')
+    @birds = $('.birds')
     @horizonLeft  = $('.horizon-left')
     @horizonRight = $('.horizon-right')
     @waves   = $('.waves')
@@ -43,12 +45,10 @@ class HomeLayout
     true
 
   setupEvents: ->
-    $(window).resize @adjustWaves
-    @adjustWaves()
-    $(window).resize @adjustHorizons
-    @adjustHorizons()
-    $(window).resize @adjustClouds
-    @adjustClouds()
+    $(window).resize @adjustWaves    ; @adjustWaves()
+    $(window).resize @adjustHorizons ; @adjustHorizons()
+    $(window).resize @adjustClouds   ; @adjustClouds()
+    $(window).resize @adjustBirds    ; @adjustBirds()
 
   adjustWaves: =>
     windowWidth = $(window).width()
@@ -82,6 +82,14 @@ class HomeLayout
     ppp = @pixelsPerPixel()
     cPPP = Pixels.clouds * ppp
     @clouds.css 'background-size', "#{cPPP}px auto"
+    @clouds.addClass 'moving' unless @clouds.hasClass 'moving'
+
+  adjustBirds: =>
+    ppp = @pixelsPerPixel()
+    bPPP = Pixels.birds * ppp
+    @birds.css 'width', "#{bPPP}px"
+    @birds.show()
+
 
 Zepto ($) => Utils.delay 50, => @HomeLayout = new HomeLayout
 

@@ -3,9 +3,17 @@
   @extend %stretched; }
   .clouds {
     @extend %stretched;
-    @extend %cloudMove;
+    opacity: 0;
     background-image: asset_url('clouds_big_32ppp.png'), asset_url('clouds_small_32ppp.png');
-    background-repeat: repeat-x; }
+    background-repeat: repeat-x;
+    &.moving {
+      @extend %cloudMove;
+      opacity: 1; } }
+    .birds {
+      display: none;
+      position: absolute;
+      left: 70%;
+      top: 18%; }
 
 .horizon {
   @extend %stretched;
