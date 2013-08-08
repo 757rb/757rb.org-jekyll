@@ -66,27 +66,26 @@
 @include animation(
   $name: 'bobbing', 
   $duration: 1.5s, 
-  $timing: ease-in-out, 
-  $iterations: infinite,
-  $direction: alternate
+  $timing: ceaser($ease-in), 
+  $iterations: infinite
 );
 
 @include webkit-keyframes('bobbing') {
-  0%, 100% { -webkit-transform: translateY(0); }
-  25% { -webkit-transform: translateY(2%); }
-  50% { -webkit-transform: translateY(-1%); }
+  0%   { -webkit-transform: translateY(0); }
+  25%  { -webkit-transform: translateY(-2%); }
+  50%  { -webkit-transform: translateY(0); }
+  75%  { -webkit-transform: translateY(2%); }
+  100% { -webkit-transform: translateY(0); }
 }
 
 @include moz-keyframes('bobbing') {
-  0%, 100% { -moz-transform: translateY(0); }
-  25% { -moz-transform: translateY(2%); }
-  50% { -moz-transform: translateY(-1%); }
+  0%   { -moz-transform: translateY(0); }
+  100% { -moz-transform: translateY(-1%); }
 }
 
 @include official-keyframes('bobbing') {
-  0%, 100% { transform: translateY(0); }
-  25% { transform: translateY(2%); }
-  50% { transform: translateY(-1%); }
+  0%   { transform: translateY(0); }
+  100% { transform: translateY(-1%); }
 }
 
 
@@ -94,14 +93,14 @@
 
 @include animation(
   $name: 'cloudMove', 
-  $duration: 50s, 
+  $duration: 30s, 
   $timing: linear, 
   $iterations: infinite,
   $direction: alternate
 );
 
 @include keyframes('cloudMove') {
-  from { background-position: 0 0; }
-  to   { background-position: 100% 0; }
+  from { background-position: 0 0, 0 0; }
+  to   { background-position: 100% 0, -30% 0; }
 }
 

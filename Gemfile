@@ -1,5 +1,6 @@
 source 'https://rubygems.org'
 
+gem 'ceaser-easing'
 gem 'coffee-script'
 gem 'compass'
 gem 'companimation'

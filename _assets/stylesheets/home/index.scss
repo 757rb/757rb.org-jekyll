@@ -2,6 +2,7 @@
 @import 'compass';
 @import 'compass/layout';
 @import 'compass/css3/user-interface';
+@import 'ceaser-easing';
 @include global-reset();
 @import './modular_scale';
 @import './variables';

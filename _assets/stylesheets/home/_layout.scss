@@ -4,9 +4,8 @@
   .clouds {
     @extend %stretched;
     @extend %cloudMove;
-    background-image: asset_url('clouds_big_32ppp.png');
-    background-repeat: repeat-x;
-  }
+    background-image: asset_url('clouds_big_32ppp.png'), asset_url('clouds_small_32ppp.png');
+    background-repeat: repeat-x; }
 
 .horizon {
   @extend %stretched;
