@@ -29,7 +29,6 @@ class HomeLayout
     @horizonRight = $('.horizon-right')
     @waves   = $('.waves')
     @mermaid = $('.mermaid')
-    @setupMermaidAnimation()
     @setupEvents()
 
   pixelsPerPixel: ->
@@ -49,6 +48,7 @@ class HomeLayout
     $(window).resize @adjustHorizons ; @adjustHorizons()
     $(window).resize @adjustClouds   ; @adjustClouds()
     $(window).resize @adjustBirds    ; @adjustBirds()
+    Utils.delay 200, => @setupMermaidAnimation()
 
   adjustWaves: =>
     windowWidth = $(window).width()
