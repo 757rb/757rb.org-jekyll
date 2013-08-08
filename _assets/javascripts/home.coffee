@@ -24,11 +24,12 @@ class HomeLayout
 
   constructor: ->
     @clouds = $('.clouds')
-    @birds = $('.birds')
+    @birds  = $('.birds')
     @horizonLeft  = $('.horizon-left')
     @horizonRight = $('.horizon-right')
     @waves   = $('.waves')
     @mermaid = $('.mermaid')
+    @watery  = $('.watery')
     @setupEvents()
 
   pixelsPerPixel: ->
@@ -83,6 +84,8 @@ class HomeLayout
     cPPP = Pixels.clouds * ppp
     @clouds.css 'background-size', "#{cPPP}px auto"
     @clouds.addClass 'moving' unless @clouds.hasClass 'moving'
+    @watery.css 'background-size', "#{cPPP}px auto"
+    @watery.addClass 'shimmering' unless @clouds.hasClass 'shimmering'
 
   adjustBirds: =>
     ppp = @pixelsPerPixel()

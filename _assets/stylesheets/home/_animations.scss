@@ -79,13 +79,27 @@
 }
 
 @include moz-keyframes('bobbing') {
-  0%   { -moz-transform: translateY(0); }
-  100% { -moz-transform: translateY(-1%); }
+  0%   { -webkit-transform: translateY(0); }
+  25%  { -moz-transform: translateY(-2%); }
+  50%  { -moz-transform: translateY(0); }
+  75%  { -moz-transform: translateY(2%); }
+  100% { -moz-transform: translateY(0); }
+}
+
+@include o-keyframes('bobbing') {
+  0%   { -o-transform: translateY(0); }
+  25%  { -o-transform: translateY(-2%); }
+  50%  { -o-transform: translateY(0); }
+  75%  { -o-transform: translateY(2%); }
+  100% { -o-transform: translateY(0); }
 }
 
 @include official-keyframes('bobbing') {
   0%   { transform: translateY(0); }
-  100% { transform: translateY(-1%); }
+  25%  { transform: translateY(-2%); }
+  50%  { transform: translateY(0); }
+  75%  { transform: translateY(2%); }
+  100% { transform: translateY(0); }
 }
 
 
@@ -104,3 +118,18 @@
   to   { background-position: 100% 0, -30% 0; }
 }
 
+
+// Cloud Reflection
+
+@include animation(
+  $name: 'cloudReflection', 
+  $duration: 30s, 
+  $timing: linear, 
+  $iterations: infinite,
+  $direction: alternate
+);
+
+@include keyframes('cloudReflection') {
+  from { background-position: 0 100%, 0 100%; }
+  to   { background-position: 100% 100%, -30% 100%; }
+}

@@ -58,9 +58,16 @@
     @extend %pixelated;
     position: absolute;
     height: 25%;
-    top: -25%;
+    top: -24.5%;
     left: 40%; }
   .watery {
     @extend %stretched;
-    background-color: rgba($color-water, 0.6); }
+    opacity: 0;
+    background-color: $color-water;
+    background-image: asset_url('clouds_reflection_32ppp.png');
+    background-repeat: repeat-x;
+    background-position: bottom;
+    &.shimmering {
+      @extend %cloudReflection;
+      opacity: 0.6; } }
 
