@@ -1,8 +1,7 @@
 #!/usr/bin/env bash
 set -e
 
-# Build and deploy to static github repo.
-
+env RM_STAR_SILENT=true rm -rf _cache/assets
 ./tasks/jekyll "_config_deploy.yml"
 sleep 1
 
