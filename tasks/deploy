@@ -14,10 +14,10 @@ git pull
 git branch -D gh-pages-stage
 git checkout -b gh-pages-stage
 
-cd ../757rb.org
+cd ../757rb.org-jekyll
 rsync -az --delete --exclude '.git' _site/ ../757rb.org
 
-cd ../757rb.github.org
+cd ../757rb.org
 git add . 
 echo "Using commit message:"
 echo "$message"
