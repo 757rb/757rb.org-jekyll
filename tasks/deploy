@@ -39,7 +39,7 @@ rsync -az --delete --exclude '.git' _site/ ../757rb.org
 pushd ../757rb.org
 git add . 
 
-git commit -m "$message"
+git commit -a -m "$message"
 git checkout gh-pages
 git merge gh-pages-stage
 git push -u origin gh-pages
