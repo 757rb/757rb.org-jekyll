@@ -1,27 +1,46 @@
 #!/usr/bin/env bash
 set -e
 
+echo "Deleting the development asset cache..."
 env RM_STAR_SILENT=true rm -rf _cache/assets
 ./tasks/jekyll "_config_deploy.yml"
 sleep 1
 
-message=$(git log -1 --pretty=%B)
+if [ $1 ]; then
+  message=$1
+else
+  echo "Fetching last commit message for deploy message..."
+  message=$(git log -1 --pretty=%B)
+fi
+echo "Using commit message:"
+echo "$message"
 
-cd ../757rb.org
+if [ ! -d ../757rb.org ]; then
+  echo "No 757rb.org deploy repository found! Will clone adjacent to this directory..."
+  pushd ..
+  git clone git@github.com:757rb/757rb.org.git
+  cd ./757rb.org
+  git branch --track gh-pages origin/gh-pages
+  git checkout gh-pages
+  git checkout -b gh-pages-stage
+else
+  echo "Changing to ../757rb.org directory..."
+  pushd ../757rb.org  
+fi
+
 git checkout gh-pages
 git pull
 git branch -D gh-pages-stage
 git checkout -b gh-pages-stage
 
-cd ../757rb.org-jekyll
+popd
 rsync -az --delete --exclude '.git' _site/ ../757rb.org
 
-cd ../757rb.org
+pushd ../757rb.org
 git add . 
-echo "Using commit message:"
-echo "$message"
+
 git commit -m "$message"
 git checkout gh-pages
 git merge gh-pages-stage
-git push origin gh-pages
+git push -u origin gh-pages
 git checkout gh-pages-stage

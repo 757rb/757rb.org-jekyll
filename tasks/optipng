@@ -1,5 +1,4 @@
 #!/usr/bin/env bash
 set -e
 
-# Optimize PNG files.
 find _assets/images -name "*.png" -exec optipng -o7 {} \;
