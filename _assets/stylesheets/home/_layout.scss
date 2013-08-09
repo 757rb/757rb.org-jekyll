@@ -4,7 +4,7 @@
   .clouds {
     @extend %stretched;
     opacity: 0;
-    background-image: asset_url('clouds_big_32ppp.png'), asset_url('clouds_small_32ppp.png');
+    background-image: asset_url('clouds_big_16ppp.png'), asset_url('clouds_small_16ppp.png');
     background-repeat: repeat-x;
     &.moving {
       @extend %cloudMove;
@@ -64,7 +64,7 @@
     @extend %stretched;
     opacity: 0;
     background-color: $color-water;
-    background-image: asset_url('clouds_reflection_32ppp.png');
+    background-image: asset_url('clouds_reflection_16ppp.png');
     background-repeat: repeat-x;
     background-position: bottom;
     &.shimmering {

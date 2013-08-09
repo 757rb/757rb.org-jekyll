@@ -1,6 +1,6 @@
 
 <div style="float: left">
-  <img src="https://raw.github.com/757rb/757rb.org-jekyll/master/_assets/images/mermaid_32ppp.png" width="80" style="padding:0px 15px 5px 0px;" />
+  <img src="https://raw.github.com/757rb/757rb.org-jekyll/master/_assets/images/mermaid_16ppp.png" width="80" style="padding:0px 15px 5px 0px;" />
 </div>
 
 # 757rb.org Website Source
