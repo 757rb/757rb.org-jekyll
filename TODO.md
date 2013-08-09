@@ -1,4 +1,10 @@
 
+# Misc
+
+* Add favicon that works with mobile.
+* Start work on meetup.com API integration.
+* Put copyright info at bottom. Credit @cosmic_meow and @metaskills
+
 
 # Add links for other 757rb destinations
 
@@ -8,8 +14,5 @@
 * LinkedIn Group: http://www.linkedin.com/groups?gid=727577
 * Twitter Updates: http://twitter.com/757rb
 * Blip.tv: http://757rb.blip.tv/posts?view=archive&amp;nsfw=dc
-
-
-# Add favicon that works with mobile.
 
 
