@@ -9,18 +9,6 @@ $ sudo port install tidy
 $ bundle install
 ```
 
-Setup git hooks.
-
-```shell
-$ echo "#!/usr/bin/env zsh
-$(pwd)/tasks/jekyll" > .git/hooks/pre-commit
-```
-
-```shell   
-$ echo "#!/usr/bin/env zsh
-$(pwd)/tasks/deploy" > .git/hooks/post-push
-```
-
 
 # Developing
 
