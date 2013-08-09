@@ -3,27 +3,19 @@ set -e
 
 # Build and deploy to static github repo.
 
-export DEPLOY_757RB=1
-
-mv _config.yml _config_dev.yml
-mv _config_deploy.yml _config.yml
-
-./tasks/jekyll 
+./tasks/jekyll "_config_deploy.yml"
 sleep 1
-
-mv _config.yml _config_dev.yml
-mv _config_deploy.yml _config.yml
 
 message=$(git log -1 --pretty=%B)
 
-cd ../757rb.github.org
+cd ../757rb.org
 git checkout gh-pages
 git pull
 git branch -D gh-pages-stage
 git checkout -b gh-pages-stage
 
 cd ../757rb.org
-rsync -az --delete --exclude '.git' _site/ ../757rb.github.org
+rsync -az --delete --exclude '.git' _site/ ../757rb.org
 
 cd ../757rb.github.org
 git add . 

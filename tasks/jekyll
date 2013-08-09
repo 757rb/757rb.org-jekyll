@@ -1,7 +1,13 @@
 #!/usr/bin/env bash
 set -e
 
-# Create the site and tidy it.
-env RM_STAR_SILENT=true rm -rf _site/* && mkdir -p _site && \
-  jekyll build && \
-  find _site -name "*.html" -exec tidy -config $(pwd)/tidy.conf {} \;
+env RM_STAR_SILENT=true rm -rf _site/*
+mkdir -p _site
+
+if [ $1 ]; then
+  jekyll build --config $1
+else
+  jekyll build
+fi
+
+find _site -name "*.html" -exec tidy -config $(pwd)/tidy.conf {} \;
