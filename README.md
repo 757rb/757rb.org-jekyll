@@ -38,6 +38,7 @@ We use the following technology along with jekyll.
 * [Sass](http://sass-lang.com) - Sass makes CSS fun again!. We use the `.scss` format.
 * [Compass](http://compass-style.org) - The best Sass CSS framework ever!.
 * [CoffeeScript](http://coffeescript.org) - High level language which compiles down to JavaScript.
+* [Zepto.js](http://zeptojs.com) - Zepto is a minimalist JavaScript library for modern browsers with a largely jQuery-compatible API.
 * [companimation](http://mikefowler.me/companimation/) - Sass/Compass framework for Dan Eden's Animate.css.
 
 
