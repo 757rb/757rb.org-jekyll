@@ -9,11 +9,11 @@
     &.moving {
       @extend %cloudMove;
       opacity: 1;
-      &.duration5  { @include animation-duration(5s);  }
+      &.duration5,
       &.duration10 { @include animation-duration(10s); }
-      &.duration15 { @include animation-duration(15s); }
-      &.duration20 { @include animation-duration(20s); }
-      &.duration25 { @include animation-duration(25s); }
+      &.duration15 { @include animation-duration(20s); }
+      &.duration20 { @include animation-duration(25s); }
+      &.duration25, 
       &.duration30 { @include animation-duration(30s); } } }
     .birds {
       display: none;
