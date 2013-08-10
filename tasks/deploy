@@ -3,6 +3,7 @@ set -e
 
 echo "Deleting the development asset cache..."
 env RM_STAR_SILENT=true rm -rf _cache/assets
+env RM_STAR_SILENT=true rm -rf .sass-cache
 ./tasks/jekyll "_config_deploy.yml"
 sleep 1
 

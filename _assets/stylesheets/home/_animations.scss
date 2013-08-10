@@ -107,7 +107,7 @@
 
 @include animation(
   $name: 'cloudMove', 
-  $duration: 30s, 
+  $duration: 10s, 
   $timing: linear, 
   $iterations: infinite,
   $direction: alternate
@@ -115,7 +115,7 @@
 
 @include keyframes('cloudMove') {
   from { background-position: 0 0, 0 0; }
-  to   { background-position: 100% 0, -30% 0; }
+  to   { background-position: 100% 0, -100% 0; }
 }
 
 
@@ -123,7 +123,7 @@
 
 @include animation(
   $name: 'cloudReflection', 
-  $duration: 30s, 
+  $duration: 10s, 
   $timing: linear, 
   $iterations: infinite,
   $direction: alternate
@@ -131,5 +131,5 @@
 
 @include keyframes('cloudReflection') {
   from { background-position: 0 100%, 0 100%; }
-  to   { background-position: 100% 100%, -30% 100%; }
+  to   { background-position: 100% 100%, -100% 100%; }
 }

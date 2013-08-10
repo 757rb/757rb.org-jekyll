@@ -14,6 +14,8 @@
 * LinkedIn Group: http://www.linkedin.com/groups?gid=727577
 * Twitter Updates: http://twitter.com/757rb
 * Blip.tv: http://757rb.blip.tv/posts?view=archive&amp;nsfw=dc
+  YouTube: http://www.youtube.com/channel/UCkqSSHLV1Z4LPdoT8oSYOFg?feature=watch
+  
 
 
 # Meetup.com Integration Notes
