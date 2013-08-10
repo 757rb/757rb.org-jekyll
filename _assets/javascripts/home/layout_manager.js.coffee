@@ -1,26 +1,7 @@
-#= require vendor/zepto-1.0.min
+delay  = @rb757.Utils.delay
+Pixels = @rb757.Pixels
 
-# Utils
-
-@Utils =
-
-  delay: (time, fn, args...) -> setTimeout fn, time, args...
-
-# Pixel Sizes
-
-@Pixels = 
-  clouds:            301
-  birds:             15
-  horizonLeft:       101
-  horizonRight:      80
-  waves:             46
-  wavesToOpening:    25
-  mermaid:           27
-  mermaidToLeftBody: 17
-
-# Home Layout Manager
-
-class HomeLayout
+class LayoutManager
 
   constructor: ->
     @clouds = $('.clouds')
@@ -39,7 +20,7 @@ class HomeLayout
 
   setupMermaidAnimation: ->
     @mermaid.addClass 'bounceInUp'
-    Utils.delay 1000, => 
+    delay 1000, => 
       @mermaid.removeClass 'bounceInUp'
       @mermaid.addClass    'bobbing'
     true
@@ -49,7 +30,7 @@ class HomeLayout
     $(window).resize @adjustHorizons ; @adjustHorizons()
     $(window).resize @adjustClouds   ; @adjustClouds()
     $(window).resize @adjustBirds    ; @adjustBirds()
-    Utils.delay 200, => @setupMermaidAnimation()
+    delay 200, => @setupMermaidAnimation()
 
   adjustWaves: =>
     windowWidth = $(window).width()
@@ -100,5 +81,5 @@ class HomeLayout
     @birds.show()
 
 
-Zepto ($) => Utils.delay 50, => @HomeLayout = new HomeLayout
+Zepto ($) => delay 50, => @rb757.layoutManager = new LayoutManager
 
