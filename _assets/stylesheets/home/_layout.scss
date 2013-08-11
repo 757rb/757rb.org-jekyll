@@ -4,7 +4,7 @@
 .players {
   height: $players-height;
   width: 100%;
-  overflow-x: auto;
+  overflow: hidden;
   white-space: nowrap; }
   .player {
     display: inline-block;
@@ -16,8 +16,7 @@
       height: $size; } }
 
 .sky {
-  @extend %stretched;
-  margin-top: $players-height; }
+  @extend %stretched; }
   .clouds {
     @extend %stretched;
     opacity: 0;

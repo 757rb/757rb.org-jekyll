@@ -71,6 +71,7 @@ class LayoutManager
     @watery.css 'background-size', "#{cPPP}px auto"
     @watery.addClass 'shimmering' unless @clouds.hasClass 'shimmering'
     @watery.data 'duration', animationSeconds
+    console.log animationSeconds
 
   adjustBirds: =>
     ppp = @pixelsPerPixel()

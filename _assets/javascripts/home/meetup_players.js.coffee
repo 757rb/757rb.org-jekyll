@@ -13,16 +13,18 @@ class MeetupPlayers
 
   getPlayers: ->
     url = @constructor.signedURL
-    $.ajax url: url, dataType: 'jsonp', success: @createPlayers
+    $.ajax url: url, dataType: 'jsonp', success: @renderPlayers
 
-  createPlayers: (data, status, xhr) =>
+  renderPlayers: (data, status, xhr) =>
     players = shuffle(data.results)
+    content = $('<section>')
     for player in players when player.photo?.thumb_link
-      el   = $ '<aside>', class: 'player', 'data-link': player.link
-      link = $ '<a>', href: player.link
-      img  = $ '<img>', src: player.photo.thumb_link
+      el    = $ '<aside>', class: 'player', 'data-link': player.link
+      link  = $ '<a>', href: player.link
+      img   = $ '<img>', src: player.photo.thumb_link
       el.append(link.append(img))
-      @players.append el
+      content.append el
+    @players.append content.html()
     true
 
-Zepto ($) -> rb757.meetupPlayers = new MeetupPlayers
+# Zepto ($) -> rb757.meetupPlayers = new MeetupPlayers
