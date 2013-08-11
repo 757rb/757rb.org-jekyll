@@ -1,8 +1,23 @@
 
 @include animation-durations(30);
 
+.players {
+  height: $players-height;
+  width: 100%;
+  overflow-x: auto;
+  white-space: nowrap; }
+  .player {
+    display: inline-block;
+    width: $players-height;
+    height: $players-height;
+    img {
+      $size: $players-height * 0.8;
+      width: $size;
+      height: $size; } }
+
 .sky {
-  @extend %stretched; }
+  @extend %stretched;
+  margin-top: $players-height; }
   .clouds {
     @extend %stretched;
     opacity: 0;

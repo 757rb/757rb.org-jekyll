@@ -14,7 +14,7 @@
 * LinkedIn Group: http://www.linkedin.com/groups?gid=727577
 * Twitter Updates: http://twitter.com/757rb
 * Blip.tv: http://757rb.blip.tv/posts?view=archive&amp;nsfw=dc
-  YouTube: http://www.youtube.com/channel/UCkqSSHLV1Z4LPdoT8oSYOFg?feature=watch
+  YouTube: http://www.youtube.com/user/norfolk757rb
   
 
 
@@ -37,5 +37,6 @@ Our Players - Idea is to use some area for showing faces. There are around 150 m
   * Then randomize the results.
   * Use `photo.thumb_link` for selling faces. Link photo to `link` attribute at meetup.com.
   * Show @username for `other_services.twitter.identifier`. Link to http://twitter.com/@username.
+  * Maybe show `name`.
 
 http://api.meetup.com/2/members.json/?group_id=1068870&order=name&offset=0&format=json&only=link%2Cname%2Cphoto%2Cother_services&page=200&sig_id=3695330&sig=71c2f349577843e4245322262b4b6d41fcf62883

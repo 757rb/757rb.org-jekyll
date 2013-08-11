@@ -4,4 +4,5 @@
 //= require home/utils
 //= require home/pixels
 //= require home/layout_manager
-
+//= require home/meetup_players
+//= require home/meetup_event
