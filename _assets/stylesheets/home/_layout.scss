@@ -1,4 +1,6 @@
 
+@include animation-durations(30);
+
 .sky {
   @extend %stretched; }
   .clouds {
@@ -8,13 +10,7 @@
     background-repeat: repeat-x;
     &.moving {
       @extend %cloudMove;
-      opacity: 1;
-      &.duration5,
-      &.duration10 { @include animation-duration(10s); }
-      &.duration15 { @include animation-duration(20s); }
-      &.duration20 { @include animation-duration(25s); }
-      &.duration25, 
-      &.duration30 { @include animation-duration(30s); } } }
+      opacity: 1; } }
     .birds {
       display: none;
       position: absolute;
@@ -75,11 +71,5 @@
     background-position: bottom;
     &.shimmering {
       @extend %cloudReflection;
-      opacity: 0.6;
-      &.duration5  { @include animation-duration(5s);  }
-      &.duration10 { @include animation-duration(10s); }
-      &.duration15 { @include animation-duration(15s); }
-      &.duration20 { @include animation-duration(20s); }
-      &.duration25 { @include animation-duration(25s); }
-      &.duration30 { @include animation-duration(30s); } } }
+      opacity: 0.6; } }
 

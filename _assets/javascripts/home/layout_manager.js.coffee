@@ -67,12 +67,10 @@ class LayoutManager
     animationSeconds = 5 * Math.floor((screenRatio * 5) / 5 + 0.5)
     @clouds.css 'background-size', "#{cPPP}px auto"
     @clouds.addClass 'moving' unless @clouds.hasClass 'moving'
-    @clouds.removeClass "duration5, duration10, duration15, duration20"
-    @clouds.addClass "duration#{animationSeconds}"
+    @clouds.data 'duration', animationSeconds
     @watery.css 'background-size', "#{cPPP}px auto"
     @watery.addClass 'shimmering' unless @clouds.hasClass 'shimmering'
-    @watery.removeClass "duration5, duration10, duration15, duration20"
-    @watery.addClass "duration#{animationSeconds}"
+    @watery.data 'duration', animationSeconds
 
   adjustBirds: =>
     ppp = @pixelsPerPixel()

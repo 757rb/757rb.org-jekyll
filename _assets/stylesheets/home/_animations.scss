@@ -2,6 +2,16 @@
 @import 'companimation';
 @import 'companimation/preset/bounce/bounceInUp';
 
+// Custom Helpers
+
+@mixin animation-durations($n) {
+  @for $i from 1 through $n {
+    [data-duration="#{$i}"] {
+      @include animation-duration(#{$i}s !important);
+    }
+  }  
+}
+
 
 // FadeInLeft Custom
 
