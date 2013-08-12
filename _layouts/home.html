@@ -6,7 +6,6 @@
     {% stylesheet home %}
   </head>
   <body>
-    <!-- <header class="players"></header> -->
     <section class="sky">
       <section class="clouds">
         <img class="birds" src="{{ 'birds_16ppp.gif' | asset_path }}">
@@ -22,7 +21,8 @@
         </section>
       </section>
       <aside class="players">
-        <header class="down">PLAYERS<br/><span class="players-count">0</span>up</header>
+        <section class="player-box"></section>
+        <header class="player-header">PLAYERS<br/><span class="players-count">0</span>up</header>
       </aside>
       <section class="water">
         <img class="waves" src="{{ 'waves_16ppp.png' | asset_path }}">

@@ -6,17 +6,25 @@
   position: absolute;
   top: $score-top-margin;
   left: $score-side-margin;
-  header { 
+  cursor: pointer; }
+  .player-box {
+    width: 43px;
+    height: 43px;
+    background-color: $color-sky;
+    border: 2px solid $color-mmaid-eyes;
+    float: left;
+    margin-right: 5px; }
+  .player-header { 
     @extend %font-arcade-17;
     @extend %font-arcade-shadow;
     @extend %user-select-none;
-    cursor: pointer;
     color: white;
+    float: left;
     &:hover  { 
       color: $color-mmaid-skin2; }
     &.active {
       color: transparent;
-      @extend %font-arcade-shadow-down; } } }
+      @extend %font-arcade-shadow-down; } }
 
 .sky {
   @extend %stretched; }
@@ -25,6 +33,7 @@
     opacity: 0;
     background-image: asset_url('clouds_big_16ppp.png'), asset_url('clouds_small_16ppp.png');
     background-repeat: repeat-x;
+    @extend %user-select-none;
     &.moving {
       @extend %cloudMove;
       opacity: 1; } }
@@ -40,6 +49,7 @@
   .horizon-left,
   .horizon-right { 
     @extend %stretched; 
+    @extend %user-select-none;
     overflow: hidden;
     opacity: 0; }
   .horizon-image { 
