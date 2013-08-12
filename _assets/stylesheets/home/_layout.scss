@@ -2,18 +2,14 @@
 @include animation-durations(30);
 
 .players {
-  height: $players-height;
-  width: 100%;
-  overflow: hidden;
-  white-space: nowrap; }
-  .player {
-    display: inline-block;
-    width: $players-height;
-    height: $players-height;
-    img {
-      $size: $players-height * 0.8;
-      width: $size;
-      height: $size; } }
+  @extend z-index-top;
+  position: absolute;
+  top: $score-top-margin;
+  left: $score-side-margin;
+  header { 
+    @extend %font-arcade-17;
+    @extend %font-arcade-shadow;
+    color: white; } }
 
 .sky {
   @extend %stretched; }

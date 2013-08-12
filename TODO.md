@@ -40,3 +40,9 @@ Our Players - Idea is to use some area for showing faces. There are around 150 m
   * Maybe show `name`.
 
 http://api.meetup.com/2/members.json/?group_id=1068870&order=name&offset=0&format=json&only=link%2Cname%2Cphoto%2Cother_services&page=200&sig_id=3695330&sig=71c2f349577843e4245322262b4b6d41fcf62883
+
+
+
+<iframe width="0" height="0" scrolling="no" frameborder="no" src="https://w.soundcloud.com/player/?url=http%3A%2F%2Fapi.soundcloud.com%2Ftracks%2F9197752&amp;color=ff6600&amp;auto_play=true&amp;show_artwork=false"></iframe>
+
+<iframe width="0" height="0" scrolling="no" frameborder="no" src="https://w.soundcloud.com/player/?url=http%3A%2F%2Fapi.soundcloud.com%2Ftracks%2F9197752&amp;color=ff6600&amp;auto_play=true&amp;show_artwork=false"></iframe>

@@ -1,4 +1,6 @@
 
+$z-index-top:  9999;
+
 $color-sky:             #38c0fc;
 $color-water:           #0078fc;
 $color-cloud:           #cbf5f9;
@@ -14,9 +16,10 @@ $color-mmaid-body-drk:  #a3a28b;
 
 $color-link: $color-white;
 
-$players-height:     60px;
 $horizon-height:      83%;
 $horizon-left-width:  48%;
 $horizon-right-width: 40%;
 $water-height:        17%;
 
+$score-top-margin:   20px;
+$score-side-margin:  30px;

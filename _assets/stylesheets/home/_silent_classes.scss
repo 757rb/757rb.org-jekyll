@@ -9,6 +9,27 @@
 %font-family-header { font-family: "Gill Sans", "Gill Sans MT", "Calibri", sans-serif; }
 %font-family-links  { font-family: "Lucida Grande", "Lucida Sans Unicode", "Lucida Sans", "Geneva", Verdana, sans-serif; }
 
+%font-arcade        { font-family: 'press_start'; }
+%font-arcade-17     { @extend %font-arcade; font-size: rem(17px); line-height: 120%; }
+%font-arcade-shadow {
+  @include text-shadow(
+    // 1 Pixel Outline
+    0px  -1px  0px  $color-mmaid-eyes, // top
+    1px  -1px  0px  $color-mmaid-eyes, // top-right
+    1px   0px  0px  $color-mmaid-eyes, // right
+    1px   1px  0px  $color-mmaid-eyes, // bottom-right
+    0px   1px  0px  $color-mmaid-eyes, // bottom
+   -1px   1px  0px  $color-mmaid-eyes, // bottom-left
+   -1px  -1px  0px  $color-mmaid-eyes, // left
+    // 2 Pixel Bottom Right Emphasis
+    3px   2px  0px  $color-mmaid-eyes,
+    2px   3px  0px  $color-mmaid-eyes,
+   -1px   3px  0px  $color-mmaid-eyes 
+  );
+}
+
+%z-index-top { z-index: $z-index-top; }
+
 %pixelated {
   image-rendering: -webkit-optimize-contrast;
   image-rendering: -moz-crisp-edges;
