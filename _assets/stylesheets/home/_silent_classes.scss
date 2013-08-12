@@ -5,6 +5,8 @@
 
 %stretched { @include stretch; }
 
+%user-select-none { @include user-select(none); }
+
 %font-family-main   { font-family: "Century Gothic", "CenturyGothic", "AppleGothic", sans-serif; }
 %font-family-header { font-family: "Gill Sans", "Gill Sans MT", "Calibri", sans-serif; }
 %font-family-links  { font-family: "Lucida Grande", "Lucida Sans Unicode", "Lucida Sans", "Geneva", Verdana, sans-serif; }
@@ -25,6 +27,20 @@
     3px   2px  0px  $color-mmaid-eyes,
     2px   3px  0px  $color-mmaid-eyes,
    -1px   3px  0px  $color-mmaid-eyes 
+  );
+}
+%font-arcade-shadow-down {
+  @include text-shadow(
+    // New Top Level
+    2px   2px  0px  $color-mmaid-skin2,
+    // 1 Pixel Outline (offset 2px bottom right)
+    2px   1px  0px  $color-mmaid-eyes, // top
+    3px   1px  0px  $color-mmaid-eyes, // top-right
+    3px   2px  0px  $color-mmaid-eyes, // right
+    3px   3px  0px  $color-mmaid-eyes, // bottom-right
+    2px   3px  0px  $color-mmaid-eyes, // bottom
+    1px   3px  0px  $color-mmaid-eyes, // bottom-left
+    1px   1px  0px  $color-mmaid-eyes  // left
   );
 }
 

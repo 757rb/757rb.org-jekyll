@@ -7,9 +7,16 @@ class MeetupPlayers
 
   constructor: ->
     @players = $('.players')
+    @header = @players.find('header')
+    @count  = @players.find('.players-count')
+    @setupEvents()
     @getPlayers()
 
   # Private
+
+  setupEvents: ->
+    @header.on 'mousedown', => @header.addClass 'active'
+    @header.on 'mouseup',   => @header.removeClass 'active'
 
   getPlayers: ->
     url = @constructor.signedURL
@@ -18,13 +25,16 @@ class MeetupPlayers
   renderPlayers: (data, status, xhr) =>
     players = shuffle(data.results)
     content = $('<section>')
+    index = 0
     for player in players when player.photo?.thumb_link
       el    = $ '<aside>', class: 'player', 'data-link': player.link
       link  = $ '<a>', href: player.link
       img   = $ '<img>', src: player.photo.thumb_link
       el.append(link.append(img))
       content.append el
-    @players.append content.html()
+      index += 1
+    @count.text index
+    # @players.append content.html()
     true
 
-# Zepto ($) -> rb757.meetupPlayers = new MeetupPlayers
+Zepto ($) -> rb757.meetupPlayers = new MeetupPlayers

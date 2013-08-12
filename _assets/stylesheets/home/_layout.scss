@@ -9,7 +9,14 @@
   header { 
     @extend %font-arcade-17;
     @extend %font-arcade-shadow;
-    color: white; } }
+    @extend %user-select-none;
+    cursor: pointer;
+    color: white;
+    &:hover  { 
+      color: $color-mmaid-skin2; }
+    &.active {
+      color: transparent;
+      @extend %font-arcade-shadow-down; } } }
 
 .sky {
   @extend %stretched; }
