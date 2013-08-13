@@ -3,7 +3,13 @@
 
 * Add favicon that works with mobile.
 * Start work on meetup.com API integration.
-* Put copyright info at bottom. Credit @cosmic_meow and @metaskills
+* Create play and pause buttons for `rb757.chiptune.play()` and `rb757.chiptune.pause()`
+* Put copyright info at bottom. 
+  - Credit @cosmic_meow and @metaskills
+  - Music Chickens (going "peck peck peck") by Ben Landis
+    https://soundcloud.com/benlandis/chickens-going-peck-peck-peck
+    https://twitter.com/thebenlandis
+
 
 
 # Add links for other 757rb destinations
