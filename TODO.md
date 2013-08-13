@@ -6,8 +6,8 @@
 * Create play and pause buttons for `rb757.chiptune.play()` and `rb757.chiptune.pause()`
 * Put copyright info at bottom. 
   - Credit @cosmic_meow and @metaskills
-  - Music Chickens (going "peck peck peck") by Ben Landis
-    https://soundcloud.com/benlandis/chickens-going-peck-peck-peck
+  - Music "Voices of Experience" by Ben Landis
+    https://soundcloud.com/benlandis/voices-of-experience
     https://twitter.com/thebenlandis
 
 
