@@ -1,0 +1,10 @@
+
+.audio-controls {
+  float: left;
+  cursor: pointer;
+  margin-left: $game-info-side-margin;
+  &.active {
+    color: transparent;
+    @extend %font-arcade-shadow-down-white; } }
+
+

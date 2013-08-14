@@ -1,0 +1,17 @@
+
+.players {
+  float: left;
+  cursor: pointer;
+  &.active {
+    color: transparent;
+    @extend %font-arcade-shadow-down-white;
+    .players-health { 
+      color: transparent;
+      @extend %font-arcade-shadow-down-ruby; } } }
+  .player-header { 
+    float: left; }
+  .players-health {
+    color: $color-ruby; }
+
+.players-area {
+  display: none; }

@@ -1,38 +1,6 @@
 
 @include animation-durations(30);
 
-.players {
-  @extend %z-index-top;
-  @extend %font-arcade-17;
-  @extend %font-arcade-shadow;
-  @extend %user-select-none;
-  color: white;
-  position: absolute;
-  top: $score-top-margin;
-  left: $score-side-margin;
-  cursor: pointer;
-  &.active {
-    color: transparent;
-    @extend %font-arcade-shadow-down-white;
-    .players-health { 
-      color: transparent;
-      @extend %font-arcade-shadow-down-ruby; } } }
-  .player-box {
-    $size: rem(40px);
-    width: $size;
-    height: $size;
-    background-color: $color-sky;
-    border: rem(2px) solid $color-mmaid-eyes;
-    float: left;
-    margin-right: rem(8px); }
-  .player-header { 
-    float: left; }
-  .players-health {
-    color: $color-ruby; }
-
-.players-area {
-  display: none; }
-
 .sky {
   @extend %stretched; }
   .clouds {
@@ -49,6 +17,14 @@
       position: absolute;
       left: 70%;
       top: 18%; }
+  .game-info {
+    color: white;
+    position: absolute;
+    margin: $game-info-top-margin $game-info-side-margin;
+    @extend %z-index-top;
+    @extend %font-arcade-17;
+    @extend %font-arcade-shadow;
+    @extend %user-select-none; }
 
 .horizon {
   @extend %stretched;
