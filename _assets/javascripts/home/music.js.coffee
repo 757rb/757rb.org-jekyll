@@ -13,12 +13,12 @@ class Chiptune
   play: -> 
     @on = true
     @audio.prop 'muted', null
-    @uiState.text '(on)'
+    @uiState.text @uiOn
 
   pause: ->
     @on = false
     @audio.prop 'muted', 'muted'
-    @uiState.text '(off)'
+    @uiState.text @uiOff
 
   toggle: (set) ->
     isOn = if set then !set else @on
