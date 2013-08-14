@@ -3,28 +3,34 @@
 
 .players {
   @extend %z-index-top;
+  @extend %font-arcade-17;
+  @extend %font-arcade-shadow;
+  @extend %user-select-none;
+  color: white;
   position: absolute;
   top: $score-top-margin;
   left: $score-side-margin;
-  cursor: pointer; }
+  cursor: pointer;
+  &.active {
+    color: transparent;
+    @extend %font-arcade-shadow-down-white;
+    .players-health { 
+      color: transparent;
+      @extend %font-arcade-shadow-down-ruby; } } }
   .player-box {
     width: 43px;
     height: 43px;
     background-color: $color-sky;
     border: 2px solid $color-mmaid-eyes;
     float: left;
-    margin-right: 5px; }
+    margin-right: 8px; }
   .player-header { 
-    @extend %font-arcade-17;
-    @extend %font-arcade-shadow;
-    @extend %user-select-none;
-    color: white;
-    float: left;
-    &:hover  { 
-      color: $color-mmaid-skin2; }
-    &.active {
-      color: transparent;
-      @extend %font-arcade-shadow-down; } }
+    float: left; }
+  .players-health {
+    color: $color-ruby; }
+
+.players-area {
+  display: none; }
 
 .sky {
   @extend %stretched; }

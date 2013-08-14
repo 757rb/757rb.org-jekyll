@@ -7,16 +7,18 @@ class MeetupPlayers
 
   constructor: ->
     @players = $('.players')
-    @header = @players.find('header')
-    @count  = @players.find('.players-count')
+    @header  = @players.find('header')
+    @count   = @players.find('.players-count')
+    @health  = @players.find('.players-health')
+    @playersArea = $('.players-area')
     @setupEvents()
     @getPlayers()
 
   # Private
 
   setupEvents: ->
-    @header.on 'mousedown', => @header.addClass 'active'
-    @header.on 'mouseup',   => @header.removeClass 'active'
+    @players.on 'mousedown', => @players.addClass 'active'
+    @players.on 'mouseup',   => @players.removeClass 'active'
 
   getPlayers: ->
     url = @constructor.signedURL
@@ -25,16 +27,25 @@ class MeetupPlayers
   renderPlayers: (data, status, xhr) =>
     players = shuffle(data.results)
     content = $('<section>')
-    index = 0
+    count = 0
     for player in players when player.photo?.thumb_link
       el    = $ '<aside>', class: 'player', 'data-link': player.link
       link  = $ '<a>', href: player.link
       img   = $ '<img>', src: player.photo.thumb_link
       el.append(link.append(img))
       content.append el
-      index += 1
-    @count.text index
-    # @players.append content.html()
+      count += 1
+    # Fancy visual count up.
+    health = []
+    for i in [1..count] by 1
+      do (i) => delay 20 * i, => 
+        h = 20 * Math.floor(i / 20 + 0.5)
+        unless h in health
+          health.push(h)
+          @health.text Array(health.length+1).join('Œ')
+        @count.text(i)
+        if i is count
+          @playersArea.append content.html()
     true
 
 Zepto ($) -> rb757.meetupPlayers = new MeetupPlayers

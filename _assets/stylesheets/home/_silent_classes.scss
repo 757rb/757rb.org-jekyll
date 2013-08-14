@@ -29,10 +29,24 @@
    -1px   3px  0px  $color-mmaid-eyes 
   );
 }
-%font-arcade-shadow-down {
+%font-arcade-shadow-down-white {
   @include text-shadow(
     // New Top Level
-    2px   2px  0px  $color-mmaid-skin2,
+    2px   2px  0px  $color-white,
+    // 1 Pixel Outline (offset 2px bottom right)
+    2px   1px  0px  $color-mmaid-eyes, // top
+    3px   1px  0px  $color-mmaid-eyes, // top-right
+    3px   2px  0px  $color-mmaid-eyes, // right
+    3px   3px  0px  $color-mmaid-eyes, // bottom-right
+    2px   3px  0px  $color-mmaid-eyes, // bottom
+    1px   3px  0px  $color-mmaid-eyes, // bottom-left
+    1px   1px  0px  $color-mmaid-eyes  // left
+  );
+}
+%font-arcade-shadow-down-ruby {
+  @include text-shadow(
+    // New Top Level
+    2px   2px  0px  $color-ruby,
     // 1 Pixel Outline (offset 2px bottom right)
     2px   1px  0px  $color-mmaid-eyes, // top
     3px   1px  0px  $color-mmaid-eyes, // top-right
