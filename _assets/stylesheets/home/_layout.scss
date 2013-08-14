@@ -18,12 +18,13 @@
       color: transparent;
       @extend %font-arcade-shadow-down-ruby; } } }
   .player-box {
-    width: 43px;
-    height: 43px;
+    $size: rem(40px);
+    width: $size;
+    height: $size;
     background-color: $color-sky;
-    border: 2px solid $color-mmaid-eyes;
+    border: rem(2px) solid $color-mmaid-eyes;
     float: left;
-    margin-right: 8px; }
+    margin-right: rem(8px); }
   .player-header { 
     float: left; }
   .players-health {
