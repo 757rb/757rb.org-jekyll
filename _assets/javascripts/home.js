@@ -1,6 +1,7 @@
 //= require vendor/zepto
-//= require vendor/moment
 //= require vendor/cookie
+//= require vendor/moment
+//= require vendor/unveil
 //= require home/namespace
 //= require home/utils
 //= require home/pixels

@@ -4,6 +4,7 @@ shuffle = @rb757.Utils.shuffle
 class MeetupPlayers
 
   @signedURL = 'http://api.meetup.com/2/members.json/?group_id=1068870&order=name&offset=0&format=json&only=link%2Cname%2Cphoto%2Cother_services&page=200&sig_id=3695330&sig=71c2f349577843e4245322262b4b6d41fcf62883'
+  @defaultPlayerSrc = 'http://identicons.github.com/metaskills.png'
 
   constructor: ->
     @players = $('.players')
@@ -31,7 +32,7 @@ class MeetupPlayers
     for player in players when player.photo?.thumb_link
       el    = $ '<aside>', class: 'player', 'data-link': player.link
       link  = $ '<a>', href: player.link
-      img   = $ '<img>', src: player.photo.thumb_link
+      img   = $ '<img>', src: @constructor.defaultPlayerSrc, 'data-src': player.photo.thumb_link
       el.append(link.append(img))
       content.append el
       count += 1

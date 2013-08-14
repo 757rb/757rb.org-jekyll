@@ -37,10 +37,11 @@ We use the following technology along with jekyll.
 * [jekyll-assets](https://github.com/ixti/jekyll-assets#readme) - Enables the sprockets asset pipeline for jekyll.
 * [Sass](http://sass-lang.com) - Sass makes CSS fun again!. We use the `.scss` format.
 * [Compass](http://compass-style.org) - The best Sass CSS framework ever!.
+* [companimation](http://mikefowler.me/companimation/) - Sass/Compass framework for Dan Eden's Animate.css.
 * [CoffeeScript](http://coffeescript.org) - High level language which compiles down to JavaScript.
 * [Zepto.js](http://zeptojs.com) - Zepto is a minimalist JavaScript library for modern browsers with a largely jQuery-compatible API.
 * [jquery-cookie](https://github.com/carhartl/jquery-cookie) - Slighly modified for Zeopt `$` compatability.
-* [companimation](http://mikefowler.me/companimation/) - Sass/Compass framework for Dan Eden's Animate.css.
+* [unveil.js](https://github.com/luis-almeida/unveil) - A very lightweight plugin to lazy load images for jQuery or Zepto.js
 
 
 ### Server
