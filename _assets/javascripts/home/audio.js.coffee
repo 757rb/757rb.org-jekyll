@@ -1,12 +1,14 @@
+touchy = $.os.tablet or $.os.phone
+
 class Audio
 
   constructor: ->
-    @audio    = $('audio')
+    @audio    = $('audio').get(0)
     @controls = $('.audio-controls')
     @uiState  = $('.audio-state')
     @uiOn     = @uiState.data('on')
     @uiOff    = @uiState.data('off')
-    @on       = not @prefIsMuted()
+    @on       = not @prefIsOff()
     if @on then @play() else @pause()
     @setupEvents()
 
@@ -27,25 +29,31 @@ class Audio
 
   # Private
 
-  audioPlay:  -> @audio.prop 'muted', null
-  audioPause: -> @audio.prop 'muted', 'muted'
-  audioMuted: -> @audio.prop 'muted'
+  audioPlay:   -> @audio.play()
+  audioPause:  -> @audio.pause()
+  audioPaused: -> @audio.paused
 
-  pref:        -> $.cookie 'audio'
-  prefOn:      -> $.cookie 'audio', 'on',    expires: 7
-  prefOff:     -> $.cookie 'audio', 'muted', expires: 7
-  prefIsMuted: -> @pref() is 'muted'
+  pref:      -> $.cookie 'audio'
+  prefOn:    -> $.cookie 'audio', 'on',  expires: 7
+  prefOff:   -> $.cookie 'audio', 'off', expires: 7
+  prefIsOff: -> @pref() is 'off'
 
   mousedown: =>
     @controls.addClass 'active'
+    false
 
   mouseup: =>
     @controls.removeClass 'active'
     @toggle()
+    false
 
   setupEvents: ->
-    @controls.on 'mousedown', @mousedown
-    @controls.on 'mouseup', @mouseup
+    if touchy
+      @controls.on 'touchstart', @mousedown
+      @controls.on 'touchend', @mouseup
+    else
+      @controls.on 'mousedown', @mousedown
+      @controls.on 'mouseup', @mouseup
 
 
 Zepto ($) -> rb757.audio = new Audio
