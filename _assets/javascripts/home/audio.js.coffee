@@ -54,4 +54,4 @@ class Audio
       @controls.on 'mouseup', @mouseup
 
 
-Zepto ($) -> rb757.audio = new Audio
+$ -> rb757.audio = new Audio

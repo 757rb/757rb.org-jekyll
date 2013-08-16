@@ -4,5 +4,4 @@ class MeetupEvent
 
 
 
-Zepto ($) => delay 50, => @rb757.meetupEvent = new MeetupEvent
-
+$ -> rb757.meetupEvent = new MeetupEvent

@@ -39,8 +39,8 @@ We use the following technology along with jekyll.
 * [Compass](http://compass-style.org) - The best Sass CSS framework ever!.
 * [companimation](http://mikefowler.me/companimation/) - Sass/Compass framework for Dan Eden's Animate.css.
 * [CoffeeScript](http://coffeescript.org) - High level language which compiles down to JavaScript.
-* [Zepto.js](http://zeptojs.com) - Zepto is a minimalist JavaScript library for modern browsers with a largely jQuery-compatible API.
-* [jquery-cookie](https://github.com/carhartl/jquery-cookie) - Slighly modified for Zeopt `$` compatability.
+* [jQuery.js](http://jquery.com) - Latest and greates v2. So only IE 9 and up for us.
+* [jquery-cookie](https://github.com/carhartl/jquery-cookie) - A simple, lightweight jQuery plugin for reading, writing and deleting cookies.
 * [unveil.js](https://github.com/luis-almeida/unveil) - A very lightweight plugin to lazy load images for jQuery or Zepto.js
 
 

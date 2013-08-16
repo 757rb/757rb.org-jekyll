@@ -79,5 +79,5 @@ class LayoutManager
     @birds.show()
 
 
-Zepto ($) => delay 50, => @rb757.layoutManager = new LayoutManager
+$ -> delay 50, -> rb757.layoutManager = new LayoutManager
 

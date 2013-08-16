@@ -1,4 +1,4 @@
-//= require vendor/zepto
+//= require vendor/jquery
 //= require vendor/cookie
 //= require vendor/moment
 //= require vendor/unveil

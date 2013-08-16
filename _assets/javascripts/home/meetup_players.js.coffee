@@ -61,4 +61,4 @@ class MeetupPlayers
           @playersArea.append content.html()
     true
 
-Zepto ($) -> rb757.meetupPlayers = new MeetupPlayers
+$ -> rb757.meetupPlayers = new MeetupPlayers
