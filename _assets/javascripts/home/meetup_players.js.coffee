@@ -26,12 +26,8 @@ class MeetupPlayers
     false
 
   setupEvents: ->
-    if rb757.touchy
-      @players.on 'touchstart', @mousedown
-      @players.on 'touchend', @mouseup
-    else
-      @players.on 'mousedown', @mousedown
-      @players.on 'mouseup', @mouseup
+    @players.on 'mousedown': @mousedown, 'touchstart': @mousedown
+    @players.on 'mouseup':   @mouseup,   'touchend':   @mouseup
 
   getPlayers: ->
     url = @constructor.signedURL

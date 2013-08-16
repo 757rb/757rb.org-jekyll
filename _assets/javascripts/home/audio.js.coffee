@@ -6,7 +6,7 @@ class Audio
     @uiState  = $('.audio-state')
     @uiOn     = @uiState.data('on')
     @uiOff    = @uiState.data('off')
-    @on       = if rb757.touchy then false else not @prefIsOff()
+    @on       = not @prefIsOff()
     if @on then @play() else @pause()
     @setupEvents()
 
@@ -46,12 +46,8 @@ class Audio
     false
 
   setupEvents: ->
-    if rb757.touchy
-      @controls.on 'touchstart', @mousedown
-      @controls.on 'touchend', @mouseup
-    else
-      @controls.on 'mousedown', @mousedown
-      @controls.on 'mouseup', @mouseup
+    @controls.on 'mousedown': @mousedown, 'touchstart': @mousedown
+    @controls.on 'mouseup':   @mouseup,   'touchend':   @mouseup
 
 
 $ -> rb757.audio = new Audio
