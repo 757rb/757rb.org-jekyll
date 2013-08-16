@@ -17,9 +17,21 @@ class MeetupPlayers
 
   # Private
 
+  mousedown: =>
+    @players.addClass 'active'
+    false
+
+  mouseup: =>
+    @players.removeClass 'active'
+    false
+
   setupEvents: ->
-    @players.on 'mousedown', => @players.addClass 'active'
-    @players.on 'mouseup',   => @players.removeClass 'active'
+    if rb757.touchy
+      @players.on 'touchstart', @mousedown
+      @players.on 'touchend', @mouseup
+    else
+      @players.on 'mousedown', @mousedown
+      @players.on 'mouseup', @mouseup
 
   getPlayers: ->
     url = @constructor.signedURL

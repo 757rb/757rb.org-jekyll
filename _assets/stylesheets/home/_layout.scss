@@ -5,10 +5,11 @@
   @extend %stretched; }
   .clouds {
     @extend %stretched;
-    opacity: 0;
-    background-image: asset_url('clouds_big_16ppp.png'), asset_url('clouds_small_16ppp.png');
-    background-repeat: repeat-x;
+    @extend %pixelated;
     @extend %user-select-none;
+    opacity: 0;
+    background-image: asset_url('clouds_big_4ppp.png'), asset_url('clouds_small_4ppp.png');
+    background-repeat: repeat-x;
     &.moving {
       @extend %cloudMove;
       opacity: 1; } }
@@ -74,9 +75,10 @@
     left: 40%; }
   .watery {
     @extend %stretched;
+    @extend %pixelated;
     opacity: 0;
     background-color: $color-water;
-    background-image: asset_url('clouds_reflection_16ppp.png');
+    background-image: asset_url('clouds_reflection_4ppp.png');
     background-repeat: repeat-x;
     background-position: bottom;
     &.shimmering {

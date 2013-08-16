@@ -1,5 +1,3 @@
-touchy = $.os.tablet or $.os.phone
-
 class Audio
 
   constructor: ->
@@ -8,7 +6,7 @@ class Audio
     @uiState  = $('.audio-state')
     @uiOn     = @uiState.data('on')
     @uiOff    = @uiState.data('off')
-    @on       = not @prefIsOff()
+    @on       = if rb757.touchy then false else not @prefIsOff()
     if @on then @play() else @pause()
     @setupEvents()
 
@@ -48,7 +46,7 @@ class Audio
     false
 
   setupEvents: ->
-    if touchy
+    if rb757.touchy
       @controls.on 'touchstart', @mousedown
       @controls.on 'touchend', @mouseup
     else
