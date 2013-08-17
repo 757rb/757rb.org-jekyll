@@ -38,12 +38,11 @@ class LayoutManager
   adjustWaves: =>
     windowWidth = $(window).width()
     mermaidWidth = @mermaid.width()
-    mermaidLeftPercentage = Number @mermaid.css('left').replace('%','')
+    mermaidLeft = Number @mermaid.css('left').replace('px','')
     wavesWidth = @waves.width()
     mermaidToLeftBody = (mermaidWidth / Pixels.mermaid) * Pixels.mermaidToLeftBody
     waveToOpening = (wavesWidth / Pixels.waves) * Pixels.wavesToOpening
-    mermaidToLeft = (windowWidth * (mermaidLeftPercentage / 100))
-    @waves.css 'left', "#{mermaidToLeft - waveToOpening + mermaidToLeftBody}px"
+    @waves.css 'left', "#{mermaidLeft - waveToOpening + mermaidToLeftBody}px"
 
   adjustHorizons: =>
     @adjustHorizon 'Left'
@@ -79,7 +78,7 @@ class LayoutManager
     @birds.show()
 
   adjustAdventure: =>
-    @nextAdventure.css 'border-width': @ppp * 9
+    @nextAdventure.css 'border-width': @ppp * 8
 
 
 $ -> delay 50, -> rb757.layoutManager = new LayoutManager
