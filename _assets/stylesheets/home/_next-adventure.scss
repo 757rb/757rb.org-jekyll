@@ -1,10 +1,21 @@
 
 .next-adventure {
-  @extend %pixelated;
+  @extend %user-select-none;
   position: absolute;
-  width: 50%;
-  height: 300px;
-  left: 25%;
+  width: 46%;
+  left: 27%;
   bottom: $water-height * 2;
   border-style: solid;
-  @include border-image(asset_url('next_adventure_border_16ppp.png') 144 fill repeat); }
+  @include border-image(asset_url('next_adventure_border_16ppp.png') 144 fill repeat);
+  .name {
+    @extend %font-arcade-17;
+    @extend %font-arcade-shadow;
+    text-transform: uppercase;
+    margin-bottom: rem(23px / 3); }
+  .description {
+    @extend %font-main-14;
+    p { margin-bottom: rem(10px); }
+  }
+
+}
+

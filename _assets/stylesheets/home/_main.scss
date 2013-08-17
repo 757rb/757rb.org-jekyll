@@ -7,6 +7,6 @@ html {
 
 body { background-color: $color-sky; }
 
-a, a:link, a:visited, a:active { color: $color-link; text-decoration: none; }
-a:hover { text-decoration: underline; }
+a, a:link, a:visited, a:active { color: $color-mmaid-skin; text-decoration: none; font-weight: bold; }
+a:hover { border-bottom: 1px dashed $color-mmaid-skin; }
 
