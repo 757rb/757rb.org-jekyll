@@ -13,9 +13,6 @@ class LayoutManager
     @watery  = $('.watery')
     @setupEvents()
 
-  pixelsPerPixel: ->
-    @mermaid.width() / Pixels.mermaid
-
   # Private
 
   setupMermaidAnimation: ->
@@ -43,7 +40,7 @@ class LayoutManager
     @waves.css 'left', "#{mermaidToLeft - waveToOpening + mermaidToLeftBody}px"
 
   adjustHorizons: =>
-    ppp = @pixelsPerPixel()
+    ppp = Pixels.ppp()
     @adjustHorizon 'Left', ppp
     @adjustHorizon 'Right', ppp
 
@@ -61,7 +58,7 @@ class LayoutManager
     h.addClass 'fadeIn' unless h.hasClass 'fadeIn'
 
   adjustClouds: =>
-    ppp = @pixelsPerPixel()
+    ppp = Pixels.ppp()
     cPPP = Pixels.clouds * ppp
     screenRatio = $(window).width() / $(window).height()
     animationSeconds = 5 * Math.floor((screenRatio * 5) / 5 + 0.5)
@@ -73,7 +70,7 @@ class LayoutManager
     @watery.data 'duration', animationSeconds
 
   adjustBirds: =>
-    ppp = @pixelsPerPixel()
+    ppp = Pixels.ppp()
     bPPP = Pixels.birds * ppp
     @birds.css 'width', "#{bPPP}px"
     @birds.show()
