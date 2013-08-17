@@ -1,0 +1,12 @@
+
+.game-info {
+  color: white;
+  position: absolute;
+  margin: $game-info-top-margin $game-info-side-margin;
+  @extend %z-index-top;
+  @extend %font-arcade-17;
+  @extend %font-arcade-shadow;
+  @extend %user-select-none; }
+  
+  @import './players';
+  @import './audio-controls';
