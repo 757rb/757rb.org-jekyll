@@ -8,6 +8,7 @@ class LayoutManager
     @birds  = $('.birds')
     @horizonLeft  = $('.horizon-left')
     @horizonRight = $('.horizon-right')
+    @nextAdventure = $('.next-adventure')
     @waves   = $('.waves')
     @mermaid = $('.mermaid')
     @watery  = $('.watery')
@@ -23,11 +24,16 @@ class LayoutManager
     true
 
   setupEvents: ->
-    $(window).resize @adjustWaves    ; @adjustWaves()
-    $(window).resize @adjustHorizons ; @adjustHorizons()
-    $(window).resize @adjustClouds   ; @adjustClouds()
-    $(window).resize @adjustBirds    ; @adjustBirds()
+    $(window).resize @setPPP          ; @setPPP()
+    $(window).resize @adjustWaves     ; @adjustWaves()
+    $(window).resize @adjustHorizons  ; @adjustHorizons()
+    $(window).resize @adjustClouds    ; @adjustClouds()
+    $(window).resize @adjustBirds     ; @adjustBirds()
+    $(window).resize @adjustAdventure ; @adjustAdventure()
     delay 200, => @setupMermaidAnimation()
+
+  setPPP: =>
+    @ppp = Pixels.ppp()
 
   adjustWaves: =>
     windowWidth = $(window).width()
@@ -40,13 +46,12 @@ class LayoutManager
     @waves.css 'left', "#{mermaidToLeft - waveToOpening + mermaidToLeftBody}px"
 
   adjustHorizons: =>
-    ppp = Pixels.ppp()
-    @adjustHorizon 'Left', ppp
-    @adjustHorizon 'Right', ppp
+    @adjustHorizon 'Left'
+    @adjustHorizon 'Right'
 
-  adjustHorizon: (side, ppp) ->
+  adjustHorizon: (side) ->
     h = @["horizon#{side}"]
-    hPPP = Pixels["horizon#{side}"] * ppp
+    hPPP = Pixels["horizon#{side}"] * @ppp
     hWidth = h.width()
     images = h.find('.horizon-image')
     hugLeftCSS  = {width: "#{hPPP}px", left: '0', right: 'auto'}
@@ -58,8 +63,7 @@ class LayoutManager
     h.addClass 'fadeIn' unless h.hasClass 'fadeIn'
 
   adjustClouds: =>
-    ppp = Pixels.ppp()
-    cPPP = Pixels.clouds * ppp
+    cPPP = Pixels.clouds * @ppp
     screenRatio = $(window).width() / $(window).height()
     animationSeconds = 5 * Math.floor((screenRatio * 5) / 5 + 0.5)
     @clouds.css 'background-size', "#{cPPP}px auto"
@@ -70,10 +74,12 @@ class LayoutManager
     @watery.data 'duration', animationSeconds
 
   adjustBirds: =>
-    ppp = Pixels.ppp()
-    bPPP = Pixels.birds * ppp
+    bPPP = Pixels.birds * @ppp
     @birds.css 'width', "#{bPPP}px"
     @birds.show()
+
+  adjustAdventure: =>
+    @nextAdventure.css 'border-width': @ppp * 9
 
 
 $ -> delay 50, -> rb757.layoutManager = new LayoutManager

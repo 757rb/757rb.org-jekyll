@@ -1,3 +1,10 @@
 
 .next-adventure {
-  display: none; }
+  @extend %pixelated;
+  position: absolute;
+  width: 50%;
+  height: 300px;
+  left: 25%;
+  bottom: $water-height * 2;
+  border-style: solid;
+  @include border-image(asset_url('next_adventure_border_16ppp.png') 144 fill repeat); }
