@@ -1,7 +1,8 @@
 
 # Misc
 
-* Animate in next event when rendered.
+* Get IE10 CSS border images hacked up.
+  http://stackoverflow.com/questions/16695521/any-way-to-hack-internet-explorer-10-to-display-border-image
 * Adjust rupee button for windows resize.
 * Set base font size for rem() units to work on windows scale.
 * Add favicon that works with mobile.
