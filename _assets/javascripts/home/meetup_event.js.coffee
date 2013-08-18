@@ -34,9 +34,15 @@ class MeetupEvent
     @description.html @result.description
     @rsvpCount.text @result.yes_rsvp_count
     @setupEvents()
+    @present()
 
   setupEvents: ->
     @rsvpButton.click @rsvpClicked
+
+  present: ->
+    @event.show()
+    @event.addClass 'bounceIn'
+
 
 
 $ -> rb757.meetupEvent = new MeetupEvent

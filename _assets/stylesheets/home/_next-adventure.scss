@@ -9,6 +9,9 @@
   bottom: $water-height * 1.8;
   border-style: solid;
   @include border-image(asset_url('next_adventure_border_16ppp.png') 144 fill repeat);
+  &.bounceIn { 
+    @extend %bounceIn;
+    @include animation-duration(600ms); }
   .name {
     @extend %font-arcade-17;
     @extend %font-arcade-shadow;
