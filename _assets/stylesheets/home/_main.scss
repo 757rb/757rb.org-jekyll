@@ -10,3 +10,14 @@ body { background-color: $color-sky; }
 a, a:link, a:visited, a:active { color: $color-mmaid-skin; text-decoration: none; font-weight: bold; }
 a:hover { border-bottom: 1px dashed $color-mmaid-skin; }
 
+.rupee-button {
+  @extend %font-arcade-14;
+  color: $color-white;
+  background-color: none;
+  cursor: pointer;
+  display: inline-block;
+  padding-left: rem(6px);
+  border-width: 12px;
+  border-style: solid;
+  @include border-image(asset_url('button_rupee_v2_16ppp.png') 48 fill repeat);
+}

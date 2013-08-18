@@ -7,8 +7,17 @@ class MeetupEvent
   constructor: ->
     @event = $('.next-adventure')
     @name = @event.find('.name')
+    @time = @event.find('time')
     @description = @event.find('.description')
+    @rsvp = @event.find('.rsvp')
+    @rsvpCount  = @rsvp.find('.rsvp-count')
+    @rsvpButton = @rsvp.find('.rsvp-button')
     @getEvent()
+
+  # Events
+
+  rsvpClicked: =>
+    window.location.href = @result.event_url
 
   # Private
 
@@ -17,10 +26,17 @@ class MeetupEvent
     $.ajax url: url, dataType: 'jsonp', success: @renderEvent
 
   renderEvent: (data, status, xhr) =>
-    event = data.results[0]
-    @name.text        event.name
-    @description.html event.description
-    # console.log event
+    @result = data.results[0]
+    time = moment(@result.time)
+    @time.attr 'datetime', time.toISOString()
+    @time.text moment(time).format('MMMM Do YYYY @ h:mma')
+    @name.text @result.name
+    @description.html @result.description
+    @rsvpCount.text @result.yes_rsvp_count
+    @setupEvents()
+
+  setupEvents: ->
+    @rsvpButton.click @rsvpClicked
 
 
 $ -> rb757.meetupEvent = new MeetupEvent

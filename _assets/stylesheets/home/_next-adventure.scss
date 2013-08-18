@@ -4,6 +4,7 @@
   position: absolute;
   width: 46%;
   left: 27%;
+  padding: 0 rem(10px);
   bottom: $water-height * 2;
   border-style: solid;
   @include border-image(asset_url('next_adventure_border_16ppp.png') 144 fill repeat);
@@ -12,10 +13,16 @@
     @extend %font-arcade-shadow;
     text-transform: uppercase;
     margin-bottom: rem(23px / 3); }
+  time {
+    display: block;
+    font-weight: bold;
+    text-transform: uppercase;
+    margin-bottom: rem(10px); }
   .description {
     @extend %font-main-14;
-    p { margin-bottom: rem(10px); }
-  }
-
-}
+    p { margin-bottom: rem(10px); } }
+  .rsvp        {  }
+  .rsvp-info   { float: left; text-transform: uppercase; font-weight: bold; }
+  .rsvp-count  { @extend %font-arcade-17; @extend %font-arcade-shadow; color: $color-ruby; }
+  .rsvp-button { float: right; @extend .rupee-button; } }
 
