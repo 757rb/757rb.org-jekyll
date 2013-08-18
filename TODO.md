@@ -1,6 +1,9 @@
 
 # Misc
 
+* Animate in next event when rendered.
+* Adjust rupee button for windows resize.
+* Set base font size for rem() units to work on windows scale.
 * Add favicon that works with mobile.
 * Start work on meetup.com API integration.
 * Put copyright info at bottom. 
@@ -24,17 +27,6 @@
 
 
 # Meetup.com Integration Notes
-
-Our Next Event - For the box over the mermaid's head. I think keeping the information simple and clean will be nice.
-
-  * Link everything to `event_url` and use pointer CSS.
-  * Header showing the `name`. Should be able to take a few lines.
-  * Use moment.js to parse the `time` and display the date. Ex: March 24th 2013 at 6:00pm.
-  * Use the `yes_rsvp_count` and show some sort of RSVP badge.
-  * Description copy using `description`. This has HTML in it like <p> tags which is OK.
-
-http://api.meetup.com/2/events.json/?group_id=1068870&status=upcoming&order=time&limited_events=False&desc=false&offset=0&format=json&page=1&fields=&sig_id=3695330&sig=4a5328681cbfb5dd2e6aea30601627fd107b7db3
-
 
 Our Players - Idea is to use some area for showing faces. There are around 150 members, so this will have to be in a scroll view. I had considered an idea where the whole top or right side would be a fixed height or width (like 100px) area that showed "PLAYERS:" in a game font. Maybe we can make it auto scroll too.
 
