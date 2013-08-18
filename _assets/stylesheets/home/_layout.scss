@@ -80,3 +80,7 @@
       @extend %cloudReflection;
       opacity: 0.6; } }
 
+footer {
+  @extend %stretched; }
+  @import './power-ups';
+

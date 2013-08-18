@@ -19,17 +19,17 @@
 %font-arcade-shadow {
   @include text-shadow(
     // 1 Pixel Outline
-    0px  -1px  0px  $color-mmaid-eyes, // top
-    1px  -1px  0px  $color-mmaid-eyes, // top-right
-    1px   0px  0px  $color-mmaid-eyes, // right
-    1px   1px  0px  $color-mmaid-eyes, // bottom-right
-    0px   1px  0px  $color-mmaid-eyes, // bottom
-   -1px   1px  0px  $color-mmaid-eyes, // bottom-left
-   -1px  -1px  0px  $color-mmaid-eyes, // left
+    0px  -1px  0px  $color-arcade-font-shadow, // top
+    1px  -1px  0px  $color-arcade-font-shadow, // top-right
+    1px   0px  0px  $color-arcade-font-shadow, // right
+    1px   1px  0px  $color-arcade-font-shadow, // bottom-right
+    0px   1px  0px  $color-arcade-font-shadow, // bottom
+   -1px   1px  0px  $color-arcade-font-shadow, // bottom-left
+   -1px  -1px  0px  $color-arcade-font-shadow, // left
     // 2 Pixel Bottom Right Emphasis
-    3px   2px  0px  $color-mmaid-eyes,
-    2px   3px  0px  $color-mmaid-eyes,
-   -1px   3px  0px  $color-mmaid-eyes 
+    3px   2px  0px  $color-arcade-font-shadow,
+    2px   3px  0px  $color-arcade-font-shadow,
+   -1px   3px  0px  $color-arcade-font-shadow 
   );
 }
 %font-arcade-shadow-down-white {
@@ -37,13 +37,13 @@
     // New Top Level
     2px   2px  0px  $color-white,
     // 1 Pixel Outline (offset 2px bottom right)
-    2px   1px  0px  $color-mmaid-eyes, // top
-    3px   1px  0px  $color-mmaid-eyes, // top-right
-    3px   2px  0px  $color-mmaid-eyes, // right
-    3px   3px  0px  $color-mmaid-eyes, // bottom-right
-    2px   3px  0px  $color-mmaid-eyes, // bottom
-    1px   3px  0px  $color-mmaid-eyes, // bottom-left
-    1px   1px  0px  $color-mmaid-eyes  // left
+    2px   1px  0px  $color-arcade-font-shadow, // top
+    3px   1px  0px  $color-arcade-font-shadow, // top-right
+    3px   2px  0px  $color-arcade-font-shadow, // right
+    3px   3px  0px  $color-arcade-font-shadow, // bottom-right
+    2px   3px  0px  $color-arcade-font-shadow, // bottom
+    1px   3px  0px  $color-arcade-font-shadow, // bottom-left
+    1px   1px  0px  $color-arcade-font-shadow  // left
   );
 }
 %font-arcade-shadow-down-ruby {
@@ -51,13 +51,13 @@
     // New Top Level
     2px   2px  0px  $color-ruby,
     // 1 Pixel Outline (offset 2px bottom right)
-    2px   1px  0px  $color-mmaid-eyes, // top
-    3px   1px  0px  $color-mmaid-eyes, // top-right
-    3px   2px  0px  $color-mmaid-eyes, // right
-    3px   3px  0px  $color-mmaid-eyes, // bottom-right
-    2px   3px  0px  $color-mmaid-eyes, // bottom
-    1px   3px  0px  $color-mmaid-eyes, // bottom-left
-    1px   1px  0px  $color-mmaid-eyes  // left
+    2px   1px  0px  $color-arcade-font-shadow, // top
+    3px   1px  0px  $color-arcade-font-shadow, // top-right
+    3px   2px  0px  $color-arcade-font-shadow, // right
+    3px   3px  0px  $color-arcade-font-shadow, // bottom-right
+    2px   3px  0px  $color-arcade-font-shadow, // bottom
+    1px   3px  0px  $color-arcade-font-shadow, // bottom-left
+    1px   1px  0px  $color-arcade-font-shadow  // left
   );
 }
 

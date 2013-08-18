@@ -13,19 +13,6 @@
     https://twitter.com/thebenlandis
 
 
-
-# Add links for other 757rb destinations
-
-√ Meetup Group: http://ruby.meetup.com/130/
-√ Github: https://github.com/757rb
-√ Google Group: http://groups.google.com/group/757rb
-√ LinkedIn Group: http://www.linkedin.com/groups?gid=727577
-√ Twitter Updates: http://twitter.com/757rb
-√ Blip.tv: http://757rb.blip.tv/posts?view=archive&amp;nsfw=dc
-  YouTube: http://www.youtube.com/user/norfolk757rb
-  
-
-
 # Meetup.com Integration Notes
 
 Our Players - Idea is to use some area for showing faces. There are around 150 members, so this will have to be in a scroll view. I had considered an idea where the whole top or right side would be a fixed height or width (like 100px) area that showed "PLAYERS:" in a game font. Maybe we can make it auto scroll too.
