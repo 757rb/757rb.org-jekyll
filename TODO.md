@@ -6,7 +6,6 @@
 * Adjust rupee button for windows resize.
 * Set base font size for rem() units to work on windows scale.
 * Add favicon that works with mobile.
-* Start work on meetup.com API integration.
 * Put copyright info at bottom. 
   - Credit @cosmic_meow and @metaskills
   - Music "Voices of Experience" by Ben Landis
@@ -17,12 +16,12 @@
 
 # Add links for other 757rb destinations
 
-* Github: https://github.com/757rb
-* Meetup Group: http://ruby.meetup.com/130/
-* Google Group: http://groups.google.com/group/757rb
-* LinkedIn Group: http://www.linkedin.com/groups?gid=727577
-* Twitter Updates: http://twitter.com/757rb
-* Blip.tv: http://757rb.blip.tv/posts?view=archive&amp;nsfw=dc
+√ Meetup Group: http://ruby.meetup.com/130/
+√ Github: https://github.com/757rb
+√ Google Group: http://groups.google.com/group/757rb
+√ LinkedIn Group: http://www.linkedin.com/groups?gid=727577
+√ Twitter Updates: http://twitter.com/757rb
+√ Blip.tv: http://757rb.blip.tv/posts?view=archive&amp;nsfw=dc
   YouTube: http://www.youtube.com/user/norfolk757rb
   
 
@@ -43,3 +42,7 @@ http://api.meetup.com/2/members.json/?group_id=1068870&order=name&offset=0&forma
     $('.players-area').show()
     $('.players-area').find('img').unveil()
 
+Maybe pixelate the avatars?
+
+  * http://close-pixelate.desandro.com
+  * http://seuratjs.com
