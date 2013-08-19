@@ -5,8 +5,8 @@
   $img-move-up: rem(3px);
   position: absolute;
   height: 30%;
-  right: $game-info-side-margin;
-  bottom: $game-info-top-margin;
+  right: rem($game-info-side-margin);
+  bottom: rem($game-info-top-margin);
   header {
     @extend %user-select-none;
     @extend %font-arcade-17;

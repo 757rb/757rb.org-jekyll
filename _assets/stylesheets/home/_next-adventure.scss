@@ -3,10 +3,10 @@
   @extend %user-select-none;
   position: absolute;
   width: 46%;
-  min-width: 450px;
+  max-height: 58%;
   left: 27%;
   padding: 0 rem(10px);
-  bottom: $water-height * 1.8;
+  bottom: $water-height * 1.85;
   border-style: solid;
   @include border-image(asset_url('next_adventure_border_16ppp.png') 144 fill repeat);
   &.bounceIn { 

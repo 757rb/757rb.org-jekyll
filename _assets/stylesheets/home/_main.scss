@@ -3,6 +3,7 @@
 
 html { 
   color: white;
+  font-size: #{$ms-base-font-size}px;
   @extend %font-family-main; }
 
 body { background-color: $color-sky; }

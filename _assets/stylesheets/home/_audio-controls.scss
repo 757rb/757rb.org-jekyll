@@ -2,7 +2,7 @@
 .audio-controls {
   float: left;
   cursor: pointer;
-  margin-left: $game-info-side-margin;
+  margin-left: rem($game-info-side-margin);
   &.active {
     color: transparent;
     @extend %font-arcade-shadow-down-white; } }
