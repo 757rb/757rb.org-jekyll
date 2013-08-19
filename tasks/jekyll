@@ -10,4 +10,3 @@ else
   jekyll build
 fi
 
-find _site -name "*.html" -exec tidy -config $(pwd)/tidy.conf {} \;

@@ -16,12 +16,10 @@ First, install some dependencies. Use MacPorts or Homebrew as desired. Also, our
 
 ```shell
 $ brew install optipng
-$ brew install tidy
 $ bundle install
 ```
 
 * The `optipng` binary is not required.
-* The `tidy` binary is required as part of the deploy task.
 * The `rsync` binary. This is installed already on most POSIX systems. Used for deploy task.
 
 
@@ -55,7 +53,7 @@ The jekyll server command has a built in `--watch` option so changes will automa
 
 This folder contains a few usefull bash shell scripts that making working on our site more enjoyable. Run them in the command line by just typing `./tasks/name` where name could be any one of the following.
 
-* `jekyll` - Build the site using jekyll and clean up the HTML with tidy.
+* `jekyll` - Build the site using jekyll.
 * `jekyll-livereload` - Loads rbenv for LiveReload and builds the site using the above script.
 * `optipng` - Find all PNG images in the _assets/images directory and compress the hell out of em!
 * `deploy` - Build and deploys the site to our sister github repo.

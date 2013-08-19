@@ -7,7 +7,6 @@ exclude:
 - Gemfile
 - Gemfile.lock
 - README.md
-- tidy.conf
 - config.ru
 - tasks
 - bin
