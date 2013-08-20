@@ -8,16 +8,20 @@
     @extend %pixelated;
     @extend %user-select-none;
     opacity: 0;
+    top: -$plaxRangeClouds;
+    left: -$plaxRangeClouds;
+    bottom: 0px;
     background-image: asset_url('clouds_big_4ppp.png'), asset_url('clouds_small_4ppp.png');
     background-repeat: repeat-x;
+    overflow: hidden;
     &.moving {
       @extend %cloudMove;
       opacity: 1; } }
     .birds {
       display: none;
       position: absolute;
-      left: 70%;
-      top: 18%; }
+      left: 73%;
+      top: 16%; }
   @import './game-info';
   @import './players-area';
   @import './next-adventure';

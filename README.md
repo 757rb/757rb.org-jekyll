@@ -40,6 +40,7 @@ We use the following technology along with jekyll.
 * [jQuery.js](http://jquery.com) - Latest and greates v2. So only IE 9 and up for us.
 * [jquery-cookie](https://github.com/carhartl/jquery-cookie) - A simple, lightweight jQuery plugin for reading, writing and deleting cookies.
 * [unveil.js](https://github.com/luis-almeida/unveil) - A very lightweight plugin to lazy load images for jQuery or Zepto.js
+* [plax.js](https://github.com/cameronmcefee/plax) - JQuery powered parallaxing
 
 
 ### Server

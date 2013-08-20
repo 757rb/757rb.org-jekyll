@@ -9,38 +9,61 @@ class LayoutManager
     @birds  = $('.birds')
     @horizonLeft   = $('.horizon-left')
     @horizonRight  = $('.horizon-right')
+    @horizonImageFront = $('.horizon-image-front')
+    @horizonImageBack  = $('.horizon-image-back')
     @nextAdventure = $('.next-adventure')
     @rsvpButton    = $('.rsvp-button')
     @waves    = $('.waves')
     @mermaid  = $('.mermaid')
+    @water    = $('.water')
     @watery   = $('.watery')
     @powerUps = $('.power-ups')
     @setupEvents()
 
   # Private
 
+  setupEvents: ->
+    $(window).resize @adjustWindow
+    @adjustWindow()
+    delay 200, => @setupMermaidAnimation()
+
   setupMermaidAnimation: ->
     @mermaid.addClass 'bounceInUp'
     delay 1000, => 
       @mermaid.removeClass 'bounceInUp'
       @mermaid.addClass    'bobbing'
+      @plaxSetup()
     true
 
-  setupEvents: ->
-    $(window).resize @setPPP          ; @setPPP()
-    $(window).resize @adjustWaves     ; @adjustWaves()
-    $(window).resize @adjustHorizons  ; @adjustHorizons()
-    $(window).resize @adjustClouds    ; @adjustClouds()
-    $(window).resize @adjustBirds     ; @adjustBirds()
-    $(window).resize @adjustAdventure ; @adjustAdventure()
-    $(window).resize @adjustPowerUps  ; @adjustPowerUps()
-    $(window).resize @adjustFontSize  ; @adjustFontSize()
-    delay 200, => @setupMermaidAnimation()
+  plaxSetup: ->
+    @horizonImageFront.plaxify  xRange: 20, yRange: 20
+    @clouds.plaxify             xRange: 20, yRange: 20, invert: true
+    @horizonImageBack.plaxify   xRange: 10, yRange: 10, invert: true
+    $.plax.enable()
 
-  setPPP: =>
+  plaxReallyRestorePositions: ->
+    plaxRange = 20
+    plaxRangePx = "-#{plaxRange}px"
+    @horizonLeft.find('.horizon-image').css  top: 'auto', right: 'auto',      bottom: plaxRangePx, left: plaxRangePx
+    @horizonRight.find('.horizon-image').css top: 'auto', right: plaxRangePx, bottom: plaxRangePx, left: 'auto'
+
+  adjustWindow: =>
+    $.plax.disable restorePositions: true, clearLayers: true
+    @plaxReallyRestorePositions()
+    @setPPP()
+    @adjustWaves()
+    @adjustHorizons()
+    @adjustClouds()
+    @adjustBirds()
+    @adjustAdventure()
+    @adjustPowerUps()
+    @adjustFontSize()
+    @plaxSetup()
+
+  setPPP: ->
     @ppp = Pixels.ppp()
 
-  adjustWaves: =>
+  adjustWaves: ->
     windowWidth = $(window).width()
     mermaidWidth = @mermaid.width()
     mermaidLeft = Number @mermaid.css('left').replace('px','')
@@ -49,25 +72,28 @@ class LayoutManager
     waveToOpening = (wavesWidth / Pixels.waves) * Pixels.wavesToOpening
     @waves.css 'left', "#{mermaidLeft - waveToOpening + mermaidToLeftBody}px"
 
-  adjustHorizons: =>
+  adjustHorizons: ->
     @adjustHorizon 'Left'
     @adjustHorizon 'Right'
 
   adjustHorizon: (side) ->
+    plaxRange = 20
+    plaxRangePx = "-#{plaxRange}px"
     h = @["horizon#{side}"]
-    ppp = Pixels["horizon#{side}"] * @ppp
+    ppp = Pixels["horizon#{side}"] * @ppp + plaxRange
     hWidth = h.width()
     images = h.find('.horizon-image')
-    hugLeftCSS  = {width: "#{ppp}px", left: '0', right: 'auto'}
-    hugRightCSS = {width: "#{ppp}px", left: 'auto', right: '0'}
+    hugLeftCSS  = {width: "#{ppp}px", left: plaxRangePx, bottom: plaxRangePx, right: 'auto'}
+    hugRightCSS = {width: "#{ppp}px", left: 'auto',      bottom: plaxRangePx, right: plaxRangePx}
     if side is 'Left'
       if hWidth > ppp then images.css(hugLeftCSS) else images.css(hugRightCSS)
     else
       if hWidth > ppp then images.css(hugRightCSS) else images.css(hugLeftCSS)
     h.addClass 'fadeIn' unless h.hasClass 'fadeIn'
 
-  adjustClouds: =>
-    ppp = Pixels.clouds * @ppp
+  adjustClouds: ->
+    plaxRange = 20
+    ppp = Pixels.clouds * @ppp + plaxRange
     screenRatio = $(window).width() / $(window).height()
     animationSeconds = 5 * Math.floor((screenRatio * 5) / 5 + 0.5)
     @clouds.css 'background-size', "#{ppp}px auto"
@@ -77,21 +103,21 @@ class LayoutManager
     @watery.addClass 'shimmering' unless @clouds.hasClass 'shimmering'
     @watery.data 'duration', animationSeconds
 
-  adjustBirds: =>
+  adjustBirds: ->
     ppp = Pixels.birds * @ppp
     @birds.css 'width', "#{ppp}px"
     @birds.show()
 
-  adjustAdventure: =>
+  adjustAdventure: ->
     @nextAdventure.css 'border-width': Math.round(@ppp * 8)
     @rsvpButton.css 'border-width': Math.round(@ppp * 2)
 
-  adjustPowerUps: =>
+  adjustPowerUps: ->
     ppp = Math.round(Pixels.powerUp * (@ppp / 2))
     @powerUps.css 'height', "#{ppp}px"
     @powerUps.find('img').css 'height', "#{ppp}px"
 
-  adjustFontSize: =>
+  adjustFontSize: ->
     fs = switch @ppp
            when 10 then @ppp + 37
            when 9  then @ppp + 27
