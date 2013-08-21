@@ -7,6 +7,7 @@ class LayoutManager
     @html   = $('html')
     @clouds = $('.clouds')
     @birds  = $('.birds')
+    @gameInfo = $('.game-info')
     @horizonLeft   = $('.horizon-left')
     @horizonRight  = $('.horizon-right')
     @horizonImageFront = $('.horizon-image-front')
@@ -53,13 +54,14 @@ class LayoutManager
     $.plax.disable restorePositions: true, clearLayers: true
     @plaxReallyRestorePositions()
     @setPPP()
+    @adjustFontSize()
+    @adjustGameInfo()
     @adjustWaves()
     @adjustHorizons()
     @adjustClouds()
     @adjustBirds()
     @adjustAdventure()
     @adjustPowerUps()
-    @adjustFontSize()
     @adjustCredits()
     @plaxSetup()
 
@@ -115,7 +117,7 @@ class LayoutManager
     @nextAdventure.css 'border-width': Math.round(@ppp * 8)
     @rsvpButton.css 'border-width': Math.round(@ppp * 2)
     overflow = => @nextAdventure.get(0).scrollHeight > @nextAdventure.height()
-    percentage = Number(@nextAdventure.css('width').replace('px','')) / $(window).width() * 100
+    percentage = Math.round(Number(@nextAdventure.css('width').replace('px','')) / $(window).width() * 100)
     while !overflow() and percentage > 46
       percentage -= 5
       left = (100 - percentage) / 2
@@ -149,6 +151,12 @@ class LayoutManager
   adjustCredits: ->
     ppp = Pixels.seaFloor * @ppp * 0.6
     @credits.css 'background-size', "#{ppp}px auto"
+
+  adjustGameInfo: ->
+    percentage = => Math.round(@gameInfo.width() / $(window).width() * 100)
+    while percentage() > 60
+      fs = @html.css('font-size').replace('px','')
+      @html.css 'font-size', "#{fs-1}px"
 
 
 $ -> delay 50, -> rb757.layoutManager = new LayoutManager
