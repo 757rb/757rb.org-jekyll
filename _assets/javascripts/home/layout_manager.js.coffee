@@ -114,6 +114,17 @@ class LayoutManager
   adjustAdventure: ->
     @nextAdventure.css 'border-width': Math.round(@ppp * 8)
     @rsvpButton.css 'border-width': Math.round(@ppp * 2)
+    overflow = => @nextAdventure.get(0).scrollHeight > @nextAdventure.height()
+    percentage = Number(@nextAdventure.css('width').replace('px','')) / $(window).width() * 100
+    while !overflow() and percentage > 46
+      percentage -= 5
+      left = (100 - percentage) / 2
+      @nextAdventure.css width: "#{percentage}%", left: "#{left}%"
+    while overflow() and percentage < 90
+      percentage += 5
+      left = (100 - percentage) / 2
+      @nextAdventure.css width: "#{percentage}%", left: "#{left}%"
+    true
 
   adjustPowerUps: ->
     ppp = Math.round(Pixels.powerUp * (@ppp / 2))

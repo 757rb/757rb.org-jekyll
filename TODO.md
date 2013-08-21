@@ -4,13 +4,6 @@
 * Get IE10 CSS border images hacked up.
   http://stackoverflow.com/questions/16695521/any-way-to-hack-internet-explorer-10-to-display-border-image
 * Add favicon that works with mobile.
-* Put copyright info at bottom. 
-  - Credit @cosmic_meow and @metaskills
-    Lookmai Rattana
-    https://twitter.com/cosmic_meow
-  - Music "Voices of Experience" by Ben Landis
-    https://soundcloud.com/benlandis/voices-of-experience
-    https://twitter.com/thebenlandis
 * Add an upper right corner graphic for our booster.com campaign
   - Little version of t-shirt. Can maybe see mermaid.
 * Animate mermaid eye blinks.

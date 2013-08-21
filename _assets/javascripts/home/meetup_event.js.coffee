@@ -41,7 +41,9 @@ class MeetupEvent
 
   present: ->
     @event.show()
+    rb757.layoutManager.adjustAdventure()
     @event.addClass 'bounceIn'
+
 
 
 
