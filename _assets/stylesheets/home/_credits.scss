@@ -1,4 +1,6 @@
 
+$cell-spacing: rem(10px);
+
 .credits {
   position: absolute;
   bottom: 0;
@@ -11,4 +13,26 @@
   @include transform(translateY(100%));
   &.up   { @extend %creditsUp; } 
   &.down { @extend %creditsDown; } }
-
+  .credits-area { 
+    $side: rem($game-info-side-margin);
+    $bottom: rem($game-info-top-margin);
+    margin: 0 $side $bottom $side;
+    display: table; }
+    .credit-avatar { 
+      display: table-cell;
+      vertical-align: top;
+      padding-right: $cell-spacing;
+      img { width: rem(50px); height: rem(50px); border: rem(2px) solid black; } }
+    .credit-info {
+      @extend %user-select-none;
+      @extend %font-main-12;
+      display: table-cell;
+      vertical-align: top;
+      padding-right: $cell-spacing * 2;
+      width: 30%;
+      .name {
+        @extend %font-arcade-10;
+        @extend %font-arcade-shadow;
+        text-transform: uppercase;
+        line-height: rem(18px);
+        color: $color-mmaid-body; } }

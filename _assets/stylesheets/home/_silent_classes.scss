@@ -8,11 +8,13 @@
 %user-select-none { @include user-select(none); }
 
 %font-family-main   { font-family: "Trebuchet MS", "Lucida Grande", "Lucida Sans Unicode", "Lucida Sans", Tahoma, sans-serif; }
+%font-main-12       { @extend %font-family-main; font-size: rem(12px); line-height: 120%; }
 %font-main-14       { @extend %font-family-main; font-size: rem(14px); line-height: 130%; }
 %font-main-17       { @extend %font-family-main; font-size: rem(17px); line-height: 130%; }
 %font-main-23       { @extend %font-family-main; font-size: rem(23px); line-height: 120%; }
 %font-main-27       { @extend %font-family-main; font-size: rem(27px); line-height: 120%; }
 %font-arcade        { font-family: 'press_start'; }
+%font-arcade-10     { @extend %font-arcade; font-size: rem(10px); line-height: 120%; }
 %font-arcade-14     { @extend %font-arcade; font-size: rem(14px); line-height: 130%; }
 %font-arcade-17     { @extend %font-arcade; font-size: rem(17px); line-height: 120%; }
 %font-arcade-23     { @extend %font-arcade; font-size: rem(23px); line-height: 120%; }

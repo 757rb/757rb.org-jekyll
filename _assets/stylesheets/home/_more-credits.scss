@@ -1,6 +1,7 @@
 
 .more-credits {
   @extend %user-select-none;
+  @extend %font-main-12;
   $footer-img-padding: rem(5px);
   $footer-img-move-up: rem(3px);
   position: absolute;
