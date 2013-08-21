@@ -1,0 +1,14 @@
+
+.credits {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  height: $water-height;
+  background-color: $color-water;
+  background-image: asset_url('sea_floor_v3_4ppp.png');
+  background-repeat: repeat-x;
+  background-position: bottom;
+  @include transform(translateY(100%));
+  &.up   { @extend %creditsUp; } 
+  &.down { @extend %creditsDown; } }
+

@@ -12,6 +12,7 @@
   mermaid:           27
   mermaidToLeftBody: 17
   powerUp:           16
+  seaFloor:          256
 
   ppp: ->
     Math.round @mermaidEl.width() / @mermaid

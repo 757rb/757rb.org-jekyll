@@ -46,8 +46,8 @@ class Audio
     false
 
   setupEvents: ->
-    @controls.on 'mousedown': @mousedown, 'touchstart': @mousedown
-    @controls.on 'mouseup':   @mouseup,   'touchend':   @mouseup
+    @controls.on 'mousedown touchstart', @mousedown
+    @controls.on 'mouseup touchend', @mouseup
 
 
 $ -> rb757.audio = new Audio

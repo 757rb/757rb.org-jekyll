@@ -1,8 +1,8 @@
 
 .power-ups {
   @extend %user-select-none;
-  $img-padding: rem(5px);
-  $img-move-up: rem(3px);
+  $footer-img-padding: rem(5px);
+  $footer-img-move-up: rem(3px);
   position: absolute;
   height: 30%;
   right: rem($game-info-side-margin);
@@ -12,7 +12,7 @@
     @extend %font-arcade-17;
     @extend %font-arcade-shadow;
     position: absolute;
-    right: 0; top: (rem(17px) + $img-padding + $img-move-up) * -1;
+    right: 0; top: (rem(17px) + $footer-img-padding + $footer-img-move-up) * -1;
     text-transform: uppercase; }
   img { 
     @extend %user-select-none;
@@ -20,7 +20,7 @@
     display: block;
     float: left;
     height: 100%;
-    margin-left: $img-padding; 
+    margin-left: $footer-img-padding; 
     padding: 0;
     &.off   { opacity: 0.6; @include scale(0.9); }
     &.hover { opacity: 1.0; @extend %springUp; }

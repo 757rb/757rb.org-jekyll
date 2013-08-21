@@ -1,0 +1,23 @@
+
+.more-credits {
+  @extend %user-select-none;
+  $footer-img-padding: rem(5px);
+  $footer-img-move-up: rem(3px);
+  position: absolute;
+  height: 30%;
+  left: rem($game-info-side-margin);
+  bottom: rem($game-info-top-margin);
+  cursor: pointer;
+  header {
+    @extend %user-select-none;
+    @extend %font-arcade-17;
+    @extend %font-arcade-shadow;
+    position: absolute;
+    left: 0; top: (rem(17px) + $footer-img-padding + $footer-img-move-up) * -1;
+    text-transform: uppercase; 
+    &.active {
+      color: transparent;
+      @extend %font-arcade-shadow-down-white; } }
+    .more-credits-direction.down { padding-left: rem(5px); }
+  .logo {
+    height: 40%; } }

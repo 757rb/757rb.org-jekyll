@@ -26,8 +26,8 @@ class MeetupPlayers
     false
 
   setupEvents: ->
-    @players.on 'mousedown': @mousedown, 'touchstart': @mousedown
-    @players.on 'mouseup':   @mouseup,   'touchend':   @mouseup
+    @players.on 'mousedown touchstart', @mousedown
+    @players.on 'mouseup touchend', @mouseup
 
   getPlayers: ->
     url = @constructor.signedURL

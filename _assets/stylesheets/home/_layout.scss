@@ -2,7 +2,8 @@
 @include animation-durations(30);
 
 .sky {
-  @extend %stretched; }
+  @extend %stretched;
+  overflow: hidden; }
   .clouds {
     @extend %stretched;
     @extend %pixelated;
@@ -55,7 +56,9 @@
   width: 100%;
   height: $water-height;
   background-color: $color-water;
-  overflow: visible; }
+  overflow: visible;
+  &.up   { @extend %waterUp; } 
+  &.down { @extend %waterDown; } }
   .mermaid {
     @extend %pixelated;
     opacity: 0;
@@ -86,5 +89,5 @@
 
 footer {
   @extend %stretched; }
+  @import './more-credits';
   @import './power-ups';
-

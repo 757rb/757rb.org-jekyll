@@ -11,3 +11,4 @@
 //= require home/meetup_players
 //= require home/meetup_event
 //= require home/power_ups
+//= require home/credits

@@ -97,6 +97,34 @@
 }
 
 
+// WaterUp / WaterDown
+
+@include animation($name: waterUp, $duration: 400ms, $timing: ease);
+@include webkit-keyframes(waterUp)     { 0% { -webkit-transform: translateY(0px); }   100% { -webkit-transform: translateY(-100%); } }
+@include moz-keyframes(waterUp)        { 0% { -moz-transform: translateY(0px); }      100% { -moz-transform: translateY(-100%); } }
+@include o-keyframes(waterUp)          { 0% { -o-transform: translateY(0px); }        100% { -o-transform: translateY(-100%); } }
+@include official-keyframes(waterUp)   { 0% { transform: translateY(0px); }           100% { transform: translateY(-100%); } }
+@include animation($name: waterDown, $duration: 400ms, $timing: ease);
+@include webkit-keyframes(waterDown)   { 0% { -webkit-transform: translateY(-100%); } 100% { -webkit-transform: translateY(0px); } }
+@include moz-keyframes(waterDown)      { 0% { -moz-transform: translateY(-100%); }    100% { -moz-transform: translateY(0px); } }
+@include o-keyframes(waterDown)        { 0% { -o-transform: translateY(-100%); }      100% { -o-transform: translateY(0px); } }
+@include official-keyframes(waterDown) { 0% { transform: translateY(-100%); }         100% { transform: translateY(0px); } }
+
+
+// CreditsUp / CreditsDown
+
+@include animation($name: creditsUp, $duration: 400ms, $timing: ease);
+@include webkit-keyframes(creditsUp)     { 0% { -webkit-transform: translateY(100%); }   100% { -webkit-transform: translateY(0px); } }
+@include moz-keyframes(creditsUp)        { 0% { -moz-transform: translateY(100%); }      100% { -moz-transform: translateY(0px); } }
+@include o-keyframes(creditsUp)          { 0% { -o-transform: translateY(100%); }        100% { -o-transform: translateY(0px); } }
+@include official-keyframes(creditsUp)   { 0% { transform: translateY(100%); }           100% { transform: translateY(0px); } }
+@include animation($name: creditsDown, $duration: 400ms, $timing: ease);
+@include webkit-keyframes(creditsDown)   { 0% { -webkit-transform: translateY(0px); } 100% { -webkit-transform: translateY(100%); } }
+@include moz-keyframes(creditsDown)      { 0% { -moz-transform: translateY(0px); }    100% { -moz-transform: translateY(100%); } }
+@include o-keyframes(creditsDown)        { 0% { -o-transform: translateY(0px); }      100% { -o-transform: translateY(100%); } }
+@include official-keyframes(creditsDown) { 0% { transform: translateY(0px); }         100% { transform: translateY(100%); } }
+
+
 // Bobbing
 
 @include animation(

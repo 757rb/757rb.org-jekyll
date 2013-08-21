@@ -18,6 +18,7 @@ class LayoutManager
     @water    = $('.water')
     @watery   = $('.watery')
     @powerUps = $('.power-ups')
+    @credits  = $('.credits')
     @setupEvents()
 
   # Private
@@ -48,6 +49,7 @@ class LayoutManager
     @horizonRight.find('.horizon-image').css top: 'auto', right: plaxRangePx, bottom: plaxRangePx, left: 'auto'
 
   adjustWindow: =>
+    rb757.credits.reset()
     $.plax.disable restorePositions: true, clearLayers: true
     @plaxReallyRestorePositions()
     @setPPP()
@@ -58,6 +60,7 @@ class LayoutManager
     @adjustAdventure()
     @adjustPowerUps()
     @adjustFontSize()
+    @adjustCredits()
     @plaxSetup()
 
   setPPP: ->
@@ -131,6 +134,10 @@ class LayoutManager
            when 1  then @ppp + 7
            else 14
     @html.css 'font-size', "#{fs}px"
+
+  adjustCredits: ->
+    ppp = Pixels.seaFloor * @ppp * 0.6
+    @credits.css 'background-size', "#{ppp}px auto"
 
 
 $ -> delay 50, -> rb757.layoutManager = new LayoutManager

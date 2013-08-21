@@ -48,6 +48,13 @@
         <img class="mermaid" src="{{ 'mermaid_16ppp.png' | asset_path }}">
         <section class="watery"></section>
         <footer>
+          <nav class="more-credits">
+            <header>CREDITS<span class="more-credits-direction down">&hellip;</span></header>
+            <p>
+              <img class="logo" src="{{ '757rb_8ppp.png' | asset_path }}">
+              &copy; {{ site.time | date: "%Y" }} all rights reserved. Click for credits.
+            </p>
+          </nav>
           <nav class="power-ups">
             <header>POWERUPS</header>
             <img data-href="http://github.com/757rb" data-name="GitHub" src="{{ 'icon_github_4ppp.png' | asset_path }}">
@@ -58,6 +65,8 @@
             <img data-href="http://www.linkedin.com/groups?gid=727577" data-name="Linkedin" src="{{ 'icon_linkedin_4ppp.png' | asset_path }}">
           </nav>
         </footer>
+      </section>
+      <section class="credits">
       </section>
     </section>
     {% javascript home %}
