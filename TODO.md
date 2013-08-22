@@ -1,6 +1,7 @@
 
 # Misc
 
+* Get Google Analytics running.
 * Get IE10 CSS border images hacked up.
   http://stackoverflow.com/questions/16695521/any-way-to-hack-internet-explorer-10-to-display-border-image
 * Add an upper right corner graphic for our booster.com campaign

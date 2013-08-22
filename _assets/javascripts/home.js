@@ -3,6 +3,7 @@
 //= require vendor/moment
 //= require vendor/unveil
 //= require vendor/plax
+//= require shared/analytics
 //= require home/namespace
 //= require home/utils
 //= require home/pixels

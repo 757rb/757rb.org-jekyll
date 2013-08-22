@@ -7,10 +7,12 @@ class Credits
     @creditHdr = @credit.find('header')
     @creditDirection = @creditHdr.find('.more-credits-direction')
     @credits = $('.credits')
+    @avatars = @credits.find '.avatar'
     @setupEvents()
 
   show: ->
     return if @open
+    @avatars.unveil()
     @credits.removeClass('down').addClass('up')
     @water.removeClass('down').addClass('up')
     @creditDirection.removeClass('down').addClass('up').text ":"
