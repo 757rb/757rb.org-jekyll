@@ -3,7 +3,6 @@
 
 * Get IE10 CSS border images hacked up.
   http://stackoverflow.com/questions/16695521/any-way-to-hack-internet-explorer-10-to-display-border-image
-* Add favicon that works with mobile.
 * Add an upper right corner graphic for our booster.com campaign
   - Little version of t-shirt. Can maybe see mermaid.
 * Animate mermaid eye blinks.
