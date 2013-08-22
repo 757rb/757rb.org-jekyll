@@ -18,11 +18,6 @@ $cell-spacing: rem(10px);
     $bottom: rem($game-info-top-margin);
     margin: 0 $side $bottom $side;
     display: table; }
-    .credit-avatar { 
-      display: table-cell;
-      vertical-align: top;
-      padding-right: $cell-spacing;
-      img { width: rem(50px); height: rem(50px); border: rem(2px) solid black; } }
     .credit-info {
       @extend %user-select-none;
       @extend %font-main-12;
@@ -30,6 +25,12 @@ $cell-spacing: rem(10px);
       vertical-align: top;
       padding-right: $cell-spacing * 2;
       width: 30%;
+      img { 
+        float: left;
+        width: rem(50px); 
+        height: rem(50px); 
+        border: rem(2px) solid black; 
+        margin: 0 $cell-spacing 5px 0; }
       .name {
         @extend %font-arcade-10;
         @extend %font-arcade-shadow;

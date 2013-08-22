@@ -151,10 +151,14 @@ class LayoutManager
   adjustCredits: ->
     ppp = Pixels.seaFloor * @ppp * 0.6
     @credits.css 'background-size', "#{ppp}px auto"
+    avatars = $('.credit-info img')
+    avatarWidth = Math.round($(window).width() / 15)
+    avatars.css width: "#{avatarWidth}px", height: "#{avatarWidth}px"
+    
 
   adjustGameInfo: ->
     percentage = => Math.round(@gameInfo.width() / $(window).width() * 100)
-    while percentage() > 60
+    while percentage() > 50
       fs = @html.css('font-size').replace('px','')
       @html.css 'font-size', "#{fs-1}px"
 
