@@ -1,15 +1,12 @@
 
 # Misc
 
-* Get Google Analytics running.
 * Get IE10 CSS border images hacked up.
   http://stackoverflow.com/questions/16695521/any-way-to-hack-internet-explorer-10-to-display-border-image
-* Add an upper right corner graphic for our booster.com campaign
-  - Little version of t-shirt. Can maybe see mermaid.
 * Animate mermaid eye blinks.
 * Use the sass-mediaqueries gem for responsive mobile "phone" site.
   - Strip away much of the hotness.
-* Add desktop picture download to powerups.
+* Add desktop picture download to promotion area when no t-shirt fundraiser.
 
 
 # Meetup.com Integration Notes
