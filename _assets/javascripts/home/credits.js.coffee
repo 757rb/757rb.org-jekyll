@@ -1,3 +1,5 @@
+delay  = @rb757.Utils.delay
+
 class Credits
 
   constructor: ->
@@ -12,7 +14,7 @@ class Credits
 
   show: ->
     return if @open
-    @avatars.unveil()
+    delay 300, => @avatars.unveil()
     @credits.removeClass('down').addClass('up')
     @water.removeClass('down').addClass('up')
     @creditDirection.removeClass('down').addClass('up').text ":"

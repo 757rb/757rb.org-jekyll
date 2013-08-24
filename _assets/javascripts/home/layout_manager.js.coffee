@@ -152,9 +152,8 @@ class LayoutManager
     ppp = Pixels.seaFloor * @ppp * 0.6
     @credits.css 'background-size', "#{ppp}px auto"
     avatars = $('.credit-info img')
-    avatarWidth = Math.round($(window).width() / 15)
+    avatarWidth = Math.round($(window).width() / 22)
     avatars.css width: "#{avatarWidth}px", height: "#{avatarWidth}px"
-    
 
   adjustGameInfo: ->
     percentage = => Math.round(@gameInfo.width() / $(window).width() * 100)

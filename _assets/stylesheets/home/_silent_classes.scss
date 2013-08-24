@@ -8,6 +8,7 @@
 %user-select-none { @include user-select(none); }
 
 %font-family-main   { font-family: "Trebuchet MS", "Lucida Grande", "Lucida Sans Unicode", "Lucida Sans", Tahoma, sans-serif; }
+%font-main-10       { @extend %font-family-main; font-size: rem(10px); line-height: 110%; }
 %font-main-12       { @extend %font-family-main; font-size: rem(12px); line-height: 120%; }
 %font-main-14       { @extend %font-family-main; font-size: rem(14px); line-height: 130%; }
 %font-main-17       { @extend %font-family-main; font-size: rem(17px); line-height: 130%; }

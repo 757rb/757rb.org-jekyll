@@ -1,5 +1,7 @@
 
-$cell-spacing: rem(10px);
+$cell-spacing:      rem(10px);
+$cell-spacing-half: $cell-spacing / 2;
+$cell-spacing-dbl:  $cell-spacing * 2;
 
 .credits {
   position: absolute;
@@ -20,20 +22,22 @@ $cell-spacing: rem(10px);
     display: table; }
     .credit-info {
       @extend %user-select-none;
-      @extend %font-main-12;
+      @extend %font-main-10;
       display: table-cell;
       vertical-align: top;
-      padding-right: $cell-spacing * 2;
-      width: 30%;
+      padding-right: $cell-spacing;
+      width: 25%;
+      &:last-child { padding-right: 0px; }
       img { 
         float: left;
         width: rem(50px); 
         height: rem(50px); 
         border: rem(2px) solid black; 
-        margin: 0 $cell-spacing 5px 0; }
+        margin: 0 $cell-spacing $cell-spacing-half 0; }
       .name {
         @extend %font-arcade-10;
         @extend %font-arcade-shadow;
+        margin-bottom: $cell-spacing-half / 2;
         text-transform: uppercase;
-        line-height: rem(18px);
+        line-height: 120%;
         color: $color-mmaid-body; } }
