@@ -1,3 +1,4 @@
+development: true
 timezone: America/New_York
 markdown: redcarpet
 redcarpet:

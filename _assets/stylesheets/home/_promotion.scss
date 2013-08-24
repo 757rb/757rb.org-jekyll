@@ -1,0 +1,24 @@
+
+.promotion {
+  color: white;
+  position: absolute;
+  margin: rem($game-info-top-margin) rem($game-info-side-margin);
+  @extend %z-index-top;
+  @extend %font-arcade-17;
+  @extend %font-arcade-shadow;
+  @extend %user-select-none;
+  right: 0;
+  cursor: pointer;
+  &.active {
+    color: transparent;
+    @extend %font-arcade-shadow-down-white; }
+  .shirt {
+    display: none;
+    float: right;
+    width: rem(56px);
+    margin-left: rem(4px);
+    &.lightSpeedIn { @extend %lightSpeedIn; }
+    &.tada { @extend %tada; } }
+  header { 
+    float: right;
+    text-align: right; } }

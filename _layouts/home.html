@@ -29,12 +29,18 @@
           <img class="horizon-image horizon-image-front" src="{{ 'horizon_right_front_4ppp.png' | asset_path }}">
         </section>
       </section>
+      {% if site.development %}
+      <section class="promotion">
+        <img class="shirt" src="{{ 'shirt_8ppp.png' | asset_path }}">
+        <header>T-SHIRT<br/>FUNDRAISER!</header>
+      </section>
+      {% endif %}
       <header class="game-info">
         <section class="players">
           <header class="player-header">PLAYERS-<span class="players-count">0</span></br>H<span class="players-health">Œ</span></header>
         </section>
         <section class="audio-controls">
-          <header class="">AUDIO-œ</br><span class="audio-state" data-on="(ON)" data-off="(OFF)">&nbsp;</span></header>
+          <header>AUDIO-œ</br><span class="audio-state" data-on="(ON)" data-off="(OFF)">&nbsp;</span></header>
         </section>
       </header>
       <aside class="players-area"></aside>

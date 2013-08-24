@@ -8,6 +8,7 @@
 //= require home/utils
 //= require home/pixels
 //= require home/audio
+//= require home/promotion
 //= require home/layout_manager
 //= require home/meetup_players
 //= require home/meetup_event
