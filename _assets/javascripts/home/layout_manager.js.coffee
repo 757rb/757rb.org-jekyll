@@ -20,6 +20,7 @@ class LayoutManager
     @watery   = $('.watery')
     @powerUps = $('.power-ups')
     @credits  = $('.credits')
+    @creditCrab = @credits.find('.crab')
     @setupEvents()
 
   # Private
@@ -149,8 +150,11 @@ class LayoutManager
     @html.css 'font-size', "#{fs}px"
 
   adjustCredits: ->
-    ppp = Pixels.seaFloor * @ppp * 0.6
+    pppAdjustment = 0.6
+    ppp = Pixels.seaFloor * @ppp * pppAdjustment
+    cPPP = Pixels.crab * @ppp * pppAdjustment
     @credits.css 'background-size', "#{ppp}px auto"
+    @creditCrab.css 'width', "#{cPPP}px"
     avatars = $('.credit-info img')
     avatarWidth = Math.round($(window).width() / 22)
     avatars.css width: "#{avatarWidth}px", height: "#{avatarWidth}px"

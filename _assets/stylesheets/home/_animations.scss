@@ -39,6 +39,15 @@
 }
 
 
+// CrabWalk
+
+@include animation($name: crabWalk, $duration: 30s, $timing: linear, $iterations: infinite);
+@include webkit-keyframes(crabWalk)   { 0% { -webkit-transform: translateX(0); } 50% { -webkit-transform: translateX(500%); } 100% { -webkit-transform: translateX(0); } }
+@include moz-keyframes(crabWalk)      { 0% { -moz-transform: translateX(0); }    50% { -moz-transform: translateX(500%); }    100% { -moz-transform: translateX(0); } }
+@include o-keyframes(crabWalk)        { 0% { -o-transform: translateX(0); }      50% { -o-transform: translateX(500%); }      100% { -o-transform: translateX(0); } }
+@include official-keyframes(crabWalk) { 0% { transform: translateX(0); }         50% { transform: translateX(500%); }         100% { transform: translateX(0); } }
+
+
 // SpringUp
 
 @include animation(

@@ -9,12 +9,14 @@ class Credits
     @creditHdr = @credit.find('header')
     @creditDirection = @creditHdr.find('.more-credits-direction')
     @credits = $('.credits')
+    @crab = @credits.find('.crab')
     @avatars = @credits.find '.avatar'
     @setupEvents()
 
   show: ->
     return if @open
     delay 300, => @avatars.unveil()
+    delay 300, => @crab.addClass('walking')
     @credits.removeClass('down').addClass('up')
     @water.removeClass('down').addClass('up')
     @creditDirection.removeClass('down').addClass('up').text ":"

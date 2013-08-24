@@ -14,10 +14,17 @@ $cell-spacing-dbl:  $cell-spacing * 2;
   background-position: bottom;
   @include transform(translateY(100%));
   &.up   { @extend %creditsUp; } 
-  &.down { @extend %creditsDown; } }
+  &.down { @extend %creditsDown; }
+  .crab {
+    position: absolute;
+    left: rem($game-info-side-margin) * 4;
+    bottom: $cell-spacing;
+    opacity: 0.4;
+    &.walking { @extend %crabWalk; } } }
   .credits-area { 
     $side: rem($game-info-side-margin);
     $bottom: rem($game-info-top-margin);
+    position: absolute;
     margin: 0 $side $bottom $side;
     display: table; }
     .credit-info {
