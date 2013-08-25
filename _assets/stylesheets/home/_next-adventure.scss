@@ -37,7 +37,7 @@
     background-size: 100% 100%;
     span   { display: block; }
     .month { @extend %font-main-12; color: white; }
-    .day   { @extend %font-main-17; font-size: rem(20px); color: black; font-weight: bold; letter-spacing: rem(-2px); } }
+    .day   { @extend %font-main-17; padding-right: rem(4px); font-size: rem(20px); color: black; font-weight: bold; letter-spacing: rem(-2px); } }
   .description {
     @extend %font-main-14;
     p { margin-bottom: rem(10px); } }
