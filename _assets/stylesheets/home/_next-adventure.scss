@@ -12,14 +12,13 @@
   &.bounceIn { 
     @extend %bounceIn;
     @include animation-duration(600ms); }
+  .logo {
+      height: rem(22px); 
+      margin: 0 rem(7px) 0 0; }
   .group { 
-    @extend %font-arcade-17;
-    @extend %font-arcade-shadow;
-    text-transform: uppercase;
-    .logo {
-      height: rem(19px); 
-      vertical-align: top;
-      margin: 0 rem(7px) rem(5px) 0; } }
+    @extend %font-main-14;
+    font-weight: bold;
+    margin-bottom: rem(23px / 3); }
   .name {
     @extend %font-arcade-17;
     @extend %font-arcade-shadow;
@@ -31,7 +30,7 @@
     width: rem(42px);
     height: rem(42px);
     text-transform: uppercase;
-    margin: 0 rem(12px) 0 0;
+    margin: rem(4px) rem(12px) 0 0;
     text-align: center;
     background-image: asset_url('calendar.png');
     background-repeat: no-repeat;
