@@ -29,7 +29,8 @@ class MeetupEvent
     @result = data.results[0]
     time = moment(@result.time)
     @time.attr 'datetime', time.toISOString()
-    @time.text moment(time).format('MMMM Do YYYY @ h:mma')
+    @time.find('.month').text time.format('MMM')
+    @time.find('.day').text   time.format('DD')
     @name.text @result.name
     @description.html @result.description
     @rsvpCount.text @result.yes_rsvp_count

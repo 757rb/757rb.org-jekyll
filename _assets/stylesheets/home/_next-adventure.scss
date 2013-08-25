@@ -2,9 +2,9 @@
 .next-adventure {
   @extend %user-select-none;
   position: absolute;
-  width: 46%;
+  width: 56%;
   max-height: 58%;
-  left: 27%;
+  left: 22%;
   padding: 0 rem(10px);
   bottom: $water-height * 1.75;
   border-style: solid;
@@ -12,16 +12,33 @@
   &.bounceIn { 
     @extend %bounceIn;
     @include animation-duration(600ms); }
+  .group { 
+    @extend %font-arcade-17;
+    @extend %font-arcade-shadow;
+    text-transform: uppercase;
+    .logo {
+      height: rem(19px); 
+      vertical-align: top;
+      margin: 0 rem(7px) rem(5px) 0; } }
   .name {
     @extend %font-arcade-17;
     @extend %font-arcade-shadow;
     text-transform: uppercase;
     margin-bottom: rem(23px / 3); }
   time {
-    display: block;
-    font-weight: bold;
+    float: left;
+    display: inline-block;
+    width: rem(42px);
+    height: rem(42px);
     text-transform: uppercase;
-    margin-bottom: rem(10px); }
+    margin: 0 rem(12px) 0 0;
+    text-align: center;
+    background-image: asset_url('calendar.png');
+    background-repeat: no-repeat;
+    background-size: 100% 100%;
+    span   { display: block; }
+    .month { @extend %font-main-12; color: white; }
+    .day   { @extend %font-main-17; font-size: rem(20px); color: black; font-weight: bold; letter-spacing: rem(-2px); } }
   .description {
     @extend %font-main-14;
     p { margin-bottom: rem(10px); } }

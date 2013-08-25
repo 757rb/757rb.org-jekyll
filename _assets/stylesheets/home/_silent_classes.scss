@@ -36,7 +36,6 @@
   );
 }
 %font-arcade-shadow-down-white {
-
   @include text-shadow(
     // New Top Level
     2px   2px  0px  $color-white,
