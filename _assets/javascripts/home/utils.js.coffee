@@ -9,3 +9,6 @@
       j = Math.floor Math.random() * (i + 1)
       [array[i], array[j]] = [array[j], array[i]]
     array
+
+  ie10: /MSIE 10.0/.test($('html').data('useragent'))
+

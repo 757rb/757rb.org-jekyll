@@ -1,4 +1,5 @@
 delay  = @rb757.Utils.delay
+ie10   = @rb757.Utils.ie10
 Pixels = @rb757.Pixels
 
 class LayoutManager
@@ -115,8 +116,13 @@ class LayoutManager
     @birds.show()
 
   adjustAdventure: ->
-    @nextAdventure.css 'border-width': Math.round(@ppp * 8)
-    @rsvpButton.css 'border-width': Math.round(@ppp * 2)
+    naBorderWidth = Math.round(@ppp * 8)
+    rsvpBorderWidth = Math.round(@ppp * 2)
+    if ie10
+      naBorderWidth = naBorderWidth / 2
+      rsvpBorderWidth = '4px'
+    @nextAdventure.css 'border-width': naBorderWidth
+    @rsvpButton.css 'border-width': rsvpBorderWidth
     overflow = => @nextAdventure.get(0).scrollHeight > @nextAdventure.height()
     percentage = Math.round(Number(@nextAdventure.css('width').replace('px','')) / $(window).width() * 100)
     while !overflow() and percentage > 46

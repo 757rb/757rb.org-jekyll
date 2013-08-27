@@ -1,8 +1,6 @@
 
 # Misc
 
-* Get IE10 CSS border images hacked up.
-  http://stackoverflow.com/questions/16695521/any-way-to-hack-internet-explorer-10-to-display-border-image
 * Animate mermaid eye blinks.
 * Use the sass-mediaqueries gem for responsive mobile "phone" site.
   - Strip away much of the hotness.
