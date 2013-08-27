@@ -21,4 +21,10 @@
     &.tada { @extend %tada; } }
   header { 
     float: right;
-    text-align: right; } }
+    text-align: right; }
+  aside {
+    @extend %font-main-12;
+    @include text-shadow(none);
+    text-align: right;
+    font-weight: bold;
+    color: black; } }
