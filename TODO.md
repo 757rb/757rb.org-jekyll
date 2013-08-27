@@ -1,7 +1,6 @@
 
 # Misc
 
-* Animate mermaid eye blinks.
 * Use the sass-mediaqueries gem for responsive mobile "phone" site.
   - Strip away much of the hotness.
 * Add desktop picture download to promotion area when no t-shirt fundraiser.
