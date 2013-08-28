@@ -8,7 +8,7 @@ class Promotion
     @setupEvents()
 
   gotoBooster: =>
-    window.location.href = 'http://www.booster.com/757rb'
+    window.location.href = 'http://www.booster.com/757rb?utm_source=757rb&utm_medium=site'
 
   # Private
 
