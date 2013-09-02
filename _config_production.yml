@@ -1,4 +1,4 @@
-development: false
+production: false
 timezone: America/New_York
 markdown: redcarpet
 redcarpet:

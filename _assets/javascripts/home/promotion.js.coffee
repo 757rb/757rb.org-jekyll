@@ -2,15 +2,29 @@ delay = @rb757.Utils.delay
 
 class Promotion
 
+  @ends: moment '20130912', 'YYYYMMDD'
+
   constructor: ->
     @promotion = $('.promotion')
+    @aside = @promotion.find('aside')
     @shirt = @promotion.find('.shirt')
+    @count = @aside.find('.count')
+    @days  = @aside.find('.days')
+    @updateContent()
     @setupEvents()
 
   gotoBooster: =>
     window.location.href = 'http://www.booster.com/757rb?utm_source=757rb&utm_medium=site'
 
   # Private
+
+  updateContent: ->
+    daysLeft = @constructor.ends.diff moment(), 'days'
+    if daysLeft < 0
+      @aside.text '(campaign closed)'
+    else
+      @count.text daysLeft
+      @days.text if daysLeft is 1 then 'Day' else 'Days'
 
   mousedown: =>
     @promotion.addClass 'active'
