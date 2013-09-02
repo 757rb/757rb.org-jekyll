@@ -9,7 +9,7 @@ env RM_STAR_SILENT=true rm -rf .sass-cache
 
 # Build the site with production config.
 
-./tasks/jekyll "_config_production.yml"
+./tasks/jekyll --config _config_production.yml
 
 # Deploy message.
 

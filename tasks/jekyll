@@ -3,10 +3,4 @@ set -e
 
 env RM_STAR_SILENT=true rm -rf _site/*
 mkdir -p _site
-
-if [ $1 ]; then
-  jekyll build --config $1
-else
-  jekyll build
-fi
-
+jekyll build $*
