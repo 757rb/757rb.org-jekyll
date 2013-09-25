@@ -1,4 +1,3 @@
-
 <div style="float: left">
   <img src="https://raw.github.com/757rb/757rb.org-jekyll/master/_assets/images/mermaid_16ppp.png" width="80" style="padding:0px 15px 5px 0px;" />
 </div>
@@ -52,7 +51,7 @@ The jekyll server command has a built in `--watch` option so changes will automa
 
 ### Task Scripts
 
-This folder contains a few usefull bash shell scripts that making working on our site more enjoyable. Run them in the command line by just typing `./tasks/name` where name could be any one of the following.
+This folder contains a few usefull bash shell scripts that make working on our site more enjoyable. Run them in the command line by just typing `./tasks/name` where name could be any one of the following.
 
 * `jekyll` - Build the site using jekyll.
 * `jekyll-livereload` - Loads rbenv for LiveReload and builds the site using the above script.
