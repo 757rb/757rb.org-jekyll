@@ -28,11 +28,12 @@ class MeetupEvent
   renderEvent: (data, status, xhr) =>
     @result = data.results[0]
     time = moment(@result.time)
+    description = @result.description.split('</p>')[0..2].join('</p>')
     @time.attr 'datetime', time.toISOString()
     @time.find('.month').text time.format('MMM')
     @time.find('.day').text   time.format('DD')
     @name.text @result.name
-    @description.html @result.description
+    @description.html description
     @rsvpCount.text @result.yes_rsvp_count
     @setupEvents()
     @present()
