@@ -28,7 +28,7 @@ class MeetupEvent
   renderEvent: (data, status, xhr) =>
     @result = data.results[0]
     time = moment(@result.time)
-    description = @result.description.split('</p>')[0..2].join('</p>')
+    description = @result.description.split('</p>')[0]
     @time.attr 'datetime', time.toISOString()
     @time.find('.month').text time.format('MMM')
     @time.find('.day').text   time.format('DD')
