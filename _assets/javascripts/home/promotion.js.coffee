@@ -7,14 +7,14 @@ class Promotion
   constructor: ->
     @promotion = $('.promotion')
     @aside = @promotion.find('aside')
-    @shirt = @promotion.find('.shirt')
+    @item = @promotion.find('.shirt, .sticker')
     @count = @aside.find('.count')
     @days  = @aside.find('.days')
-    @updateContent()
+    # @updateContent()
     @setupEvents()
 
-  gotoBooster: =>
-    window.location.href = 'http://www.booster.com/757rb?utm_source=757rb&utm_medium=site'
+  gotoPromotion: =>
+    window.location.href = 'http://www.stickermule.com/marketplace/1262-757rb-norfolk-ruby&utm_medium=site'
 
   # Private
 
@@ -32,17 +32,17 @@ class Promotion
 
   mouseup: =>
     @promotion.removeClass 'active'
-    @gotoBooster()
+    @gotoPromotion()
     false
 
   bringIn: =>
-    @shirt.addClass('lightSpeedIn')
-    @shirt.show()
+    @item.addClass('lightSpeedIn')
+    @item.show()
 
   tada: =>
-    @shirt.removeClass 'lightSpeedIn'
-    @shirt.addClass 'tada'
-    delay 1000, => @shirt.removeClass 'tada'
+    @item.removeClass 'lightSpeedIn'
+    @item.addClass 'tada'
+    delay 1000, => @item.removeClass 'tada'
 
   setupEvents: ->
     @promotion.on 'mousedown touchstart', @mousedown

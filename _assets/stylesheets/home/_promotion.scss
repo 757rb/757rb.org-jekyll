@@ -12,14 +12,15 @@
   &.active {
     color: transparent;
     @extend %font-arcade-shadow-down-white; }
-  .shirt {
+  .shirt { width: rem(56px); }
+  .sticker { width: rem(38px); }
+  .shirt, .sticker {
     display: none;
     float: right;
-    width: rem(56px);
     margin-left: rem(4px);
     &.lightSpeedIn { @extend %lightSpeedIn; }
     &.tada { @extend %tada; } }
-  header { 
+  header {
     float: right;
     text-align: right; }
   aside {
