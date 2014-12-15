@@ -9,6 +9,7 @@ class MeetupEvent
     @name = @event.find('.name')
     @time = @event.find('time')
     @description = @event.find('.description')
+    @metaDescription = $('#meta-description')
     @rsvp = @event.find('.rsvp')
     @rsvpCount  = @rsvp.find('.rsvp-count')
     @rsvpButton = @rsvp.find('.rsvp-button')
@@ -28,12 +29,13 @@ class MeetupEvent
   renderEvent: (data, status, xhr) =>
     @result = data.results[0]
     time = moment(@result.time)
-    description = @result.description.split('</p>')[0]
+    description = @result.description.split('</p>')[0].replace('<p>','')
     @time.attr 'datetime', time.toISOString()
     @time.find('.month').text time.format('MMM')
     @time.find('.day').text   time.format('DD')
     @name.text @result.name
-    @description.html description
+    @description.html "<p>#{description}</p>"
+    @metaDescription.attr 'content', description
     @rsvpCount.text @result.yes_rsvp_count
     @setupEvents()
     @present()
