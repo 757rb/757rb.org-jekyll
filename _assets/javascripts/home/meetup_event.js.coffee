@@ -2,7 +2,7 @@ delay  = @rb757.Utils.delay
 
 class MeetupEvent
 
-  @signedURL = 'http://api.meetup.com/2/events.json/?group_id=1068870&status=upcoming&order=time&limited_events=False&desc=false&offset=0&format=json&page=1&fields=&sig_id=3695330&sig=4a5328681cbfb5dd2e6aea30601627fd107b7db3'
+  @signedURL = 'https://api.meetup.com/2/events.json/?offset=0&format=json&limited_events=False&group_id=1068870&page=1&fields=&order=time&status=upcoming&desc=false&sig_id=3695330&sig=b9ec7a49f3527a5757fe59b5af16fb368047d70e'
 
   constructor: ->
     @event = $('.next-adventure')

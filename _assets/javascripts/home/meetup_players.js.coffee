@@ -3,7 +3,7 @@ shuffle = @rb757.Utils.shuffle
 
 class MeetupPlayers
 
-  @signedURL = 'http://api.meetup.com/2/members.json/?group_id=1068870&order=name&offset=0&format=json&only=link%2Cname%2Cphoto%2Cother_services&page=200&sig_id=3695330&sig=71c2f349577843e4245322262b4b6d41fcf62883'
+  @signedURL = 'https://api.meetup.com/2/members.json/?offset=0&format=json&group_id=1068870&only=link%2Cname%2Cphoto%2Cother_services&page=200&order=name&sig_id=3695330&sig=22f83da2503545273f1330c4963c0820d87a59bb'
   @defaultPlayerSrc = 'http://identicons.github.com/metaskills.png'
 
   constructor: ->
@@ -47,7 +47,7 @@ class MeetupPlayers
     # Fancy visual count up.
     health = []
     for i in [1..count] by 1
-      do (i) => delay 20 * i, => 
+      do (i) => delay 20 * i, =>
         h = 20 * Math.floor(i / 20 + 0.5)
         unless h in health
           health.push(h)
