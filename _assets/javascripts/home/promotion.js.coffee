@@ -14,7 +14,7 @@ class Promotion
     @setupEvents()
 
   gotoPromotion: =>
-    window.location.href = 'http://757dev.org?utm_source757rb=xxx&utm_medium=site'
+    window.location.href = 'http://757dev.org/'
 
   # Private
 
